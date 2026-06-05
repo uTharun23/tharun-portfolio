@@ -1,90 +1,80 @@
 # 🌐 Personal Portfolio Website
-This is my personal portfolio website developed to showcase my skills, projects, education, and contact information. The website is designed with a clean and responsive user interface to present my profile professionally for internships, placements, and portfolio purposes.
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://tharun-portfolio-red.vercel.app/)
+
+Welcome to my professional developer portfolio. This website is designed to highlight my academic background, technical skills, projects, and personal milestones in a modern, interactive, and visually stunning layout.
+
+**Live Link:** [https://tharun-portfolio-red.vercel.app/](https://tharun-portfolio-red.vercel.app/)
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- Personal Introduction
-- About Me Section
-- Skills Showcase
-- Project Details
-- Education Information
-- Contact Section
-- Responsive Web Design
-- Clean Portfolio UI
+- **Dynamic Theme Customizer**: An interactive dropdown picker enabling visitors to switch between glowing accent schemes (Cyber Indigo, Neon Emerald, Nebula Sunset, and Solar Flare).
+- **Interactive AI Assistant Chatbot**: A floating helper bot in the corner that handles visitor queries about skills, contact info, and projects with realistic typing delay simulations and quick replies.
+- **Project Detail Overlays**: Click-triggered glassmorphic modals that load structured project descriptions, features, and custom client-server-AI architecture diagrams.
+- **Interactive Digital Guestbook**: A visitor wall allowing users to leave notes. Signatures are persisted locally (`localStorage`) and trigger a particle confetti effect upon success.
+- **Dynamic Skills Filter**: Interactive filter tabs allowing recruiters to toggle between languages, frameworks, and databases/tools.
+- **Lightweight Particle Grid**: High-performance canvas-based particle network that responds to cursor drift.
+- **Responsive Layout**: Designed with fluid typography, responsive grid columns, and mobile-friendly drawer navigation.
 
 ---
 
 ## 🛠 Tech Stack
 
-- HTML
-- CSS
-- JavaScript
-- React
-- python
+- **Core & Logic**: HTML5, Vanilla JavaScript (ES6+), and CSS3 (Custom properties & grid systems).
+- **Icons & Fonts**: Google Fonts (Syne, Plus Jakarta Sans) and FontAwesome v6.
+- **Effects & Assets**: Canvas Confetti (particle celebration).
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-Portfolio_Website/
+tharun-portfolio/
 │
-├── index.html
-├── style.css
-├── script.js
-├── images/
-└── README.md
+├── index.html         # Main markup file
+├── style.css          # Core layouts, variables, animations
+├── script.js           # Theme logic, chatbot, guestbook, modals
+├── certifications/    # Course credential pdfs
+├── images/            # Assets and fallback thumbnails
+├── .gitignore         # Build ignore rules
+└── README.md          # Project documentation
 ```
 
 ---
 
-## ▶️ How to Run
+## ▶️ How to Run Locally
 
 ```bash
-git clone https://github.com/uTharun23/Portfolio_Website.git
+# Clone the repository
+git clone https://github.com/uTharun23/tharun-portfolio.git
 
-cd Portfolio_Website
+# Navigate into the folder
+cd tharun-portfolio
 
+# Open index.html directly in your browser
 open index.html
 ```
-
-Or simply open:
-
-```bash
-index.html
-```
-
-in any browser.
 
 ---
 
 ## 👨‍💻 Developed By
 
-## Tharun Ummadala  
-B.Tech Information Technology Student
+### Tharun Ummadala  
+*B.Tech Information Technology Student*
 
-🔗 GitHub  
-https://github.com/uTharun23
-
-🔗 LinkedIn  
-https://linkedin.com/in/tharunummadala
+🔗 **GitHub:** [uTharun23](https://github.com/uTharun23)  
+🔗 **LinkedIn:** [Tharun Ummadala](https://linkedin.com/in/tharun-ummadala-b54b083a3)  
 
 ---
 
 ## ⭐ Project Goal
 
-This portfolio website was developed to showcase my academic profile, technical skills, projects, and personal achievements in a professional way for internships, placements, and online presence.
-
----
-
-## 📌 Project Status
-
-🚧 Currently improving with new sections, better animations, and updated project details.
+This website serves as my primary professional portfolio to showcase my IT academic profile, AI web systems competency, and technical milestones for internships, placements, and collaborative roles.
 
 ---
 
 ## 🌟 Support
 
-If you like this portfolio project, consider giving it a ⭐ on GitHub.
+If you like this portfolio project, consider giving it a ⭐ on GitHub!
