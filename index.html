@@ -3,816 +3,808 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ummadala Tharun | B.Tech IT Student Portfolio</title>
+  <title>Ummadala Tharun | Portfolio</title>
+  <meta name="description" content="Professional developer portfolio of Ummadala Tharun, a B.Tech IT Student building AI-powered web applications and intelligent systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    :root {
-      --bg: #08111f;
-      --bg-2: #0d1830;
-      --card: rgba(255,255,255,0.07);
-      --border: rgba(255,255,255,0.12);
-      --text: #eef4ff;
-      --muted: #b9c6de;
-      --primary: #4f7cff;
-      --accent: #00d4ff;
-      --accent-2: #8b5cf6;
-      --shadow: 0 18px 50px rgba(0,0,0,0.32);
-      --max: 1180px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Inter", system-ui, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(79,124,255,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(0,212,255,0.12), transparent 24%),
-        linear-gradient(180deg, #050914 0%, #0a1324 100%);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .glass {
-      background: var(--card);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
-    }
-
-    .section { padding: 92px 0; position: relative; }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      text-align: center;
-      margin-bottom: 14px;
-      line-height: 1.1;
-    }
-
-    .section-subtitle {
-      max-width: 720px;
-      margin: 0 auto 52px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(34px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(15px);
-      opacity: 0.45;
-      pointer-events: none;
-      animation: float 10s ease-in-out infinite;
-    }
-
-    .orb.one {
-      width: 180px;
-      height: 180px;
-      background: rgba(79,124,255,0.2);
-      top: 110px;
-      left: -40px;
-    }
-
-    .orb.two {
-      width: 220px;
-      height: 220px;
-      background: rgba(0,212,255,0.14);
-      right: -70px;
-      top: 320px;
-      animation-delay: -2s;
-    }
-
-    .orb.three {
-      width: 150px;
-      height: 150px;
-      background: rgba(139,92,246,0.16);
-      left: 8%;
-      bottom: 10px;
-      animation-delay: -4s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 0 rgba(79,124,255,0.18); }
-      50% { box-shadow: 0 0 30px rgba(79,124,255,0.3); }
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(8,17,31,0.7);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-wrap {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-    }
-
-    .logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover { color: #fff; }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 40px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      margin-bottom: 22px;
-      font-size: 0.95rem;
-      color: #dce7ff;
-    }
-
-    .eyebrow i { color: var(--accent); }
-
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 0.98;
-      margin-bottom: 18px;
-      letter-spacing: -2px;
-    }
-
-    .hero h1 .gradient {
-      background: linear-gradient(90deg, #ffffff 0%, #9fd4ff 40%, #9b7bff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 640px;
-      margin-bottom: 30px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-width: 170px;
-      padding: 15px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-    }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-      animation: glow 3s ease-in-out infinite;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      max-width: 670px;
-    }
-
-    .stat-card {
-      padding: 18px;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .stat-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 4px;
-    }
-
-    .stat-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .hero-card {
-      padding: 22px;
-      border-radius: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(79,124,255,0.12), rgba(0,212,255,0.06));
-      pointer-events: none;
-    }
-
-    .profile-wrap {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      min-height: 520px;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .profile-wrap img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      filter: brightness(0.96);
-    }
-
-    .floating-badge,
-    .floating-note {
-      position: absolute;
-      z-index: 2;
-    }
-
-    .floating-badge {
-      left: 22px;
-      bottom: 22px;
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 1.3rem;
-      color: #fff;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(8px);
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .floating-note {
-      right: 16px;
-      top: 18px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      max-width: 230px;
-    }
-
-    .floating-note h4 {
-      font-size: 0.98rem;
-      margin-bottom: 6px;
-    }
-
-    .floating-note p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .card {
-      padding: 28px;
-      border-radius: 24px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .card h3 {
-      font-size: 1.28rem;
-      margin-bottom: 14px;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .mini-item {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .mini-item strong {
-      display: block;
-      color: #fff;
-      margin-bottom: 4px;
-      font-size: 0.96rem;
-    }
-
-    .skills-grid,
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .skill-box,
-    .project-card {
-      padding: 26px 22px;
-      border-radius: 22px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-box:hover,
-    .project-card:hover,
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(79,124,255,0.34);
-    }
-
-    .icon-box {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      font-size: 1.2rem;
-      background: linear-gradient(135deg, rgba(79,124,255,0.2), rgba(0,212,255,0.12));
-      color: #fff;
-    }
-
-    .skill-box h3,
-    .project-card h3 {
-      font-size: 1.12rem;
-      margin-bottom: 8px;
-    }
-
-    .project-card p { margin-bottom: 12px; }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .tag-row span {
-      padding: 9px 14px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #dce7ff;
-    }
-
-    .resume-banner {
-      padding: 34px 28px;
-      border-radius: 28px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .resume-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(79,124,255,0.14), transparent 58%);
-      pointer-events: none;
-    }
-
-    .resume-banner h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .resume-banner p {
-      max-width: 700px;
-      margin: 0 auto 24px;
-      color: var(--muted);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .contact-pill {
-      padding: 13px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #eaf2ff;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      padding: 28px 0 38px;
-      text-align: center;
-      color: #8f9cb7;
-      font-size: 0.94rem;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .skills-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { text-align: center; }
-      .hero p, .section-subtitle { margin-left: auto; margin-right: auto; }
-      .hero-actions, .hero-stats, .contact-links { justify-content: center; }
-      .hero-stats { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .floating-note { right: 10px; top: 10px; }
-    }
-
-    @media (max-width: 640px) {
-      .section { padding: 78px 0; }
-      .profile-wrap,
-      .profile-wrap img { min-height: 400px; height: 400px; }
-      .card, .resume-banner, .hero-card { padding: 22px; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
+  <!-- Cursor Glow Spotlight -->
+  <div class="mouse-glow" id="mouse-glow"></div>
+
+  <!-- Premium Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-bar"></div>
+
+  <!-- Elegant Canvas Particle Background -->
+  <canvas id="canvas-particles"></canvas>
+
+  <!-- Navigation Header -->
+  <nav class="glass-nav navbar">
     <div class="container nav-wrap">
-      <a href="#home" class="logo">Tharun<span>.</span></a>
+      <a href="#home" class="logo">Portfolio<span>.</span></a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" class="nav-link-item">About</a>
+        <a href="#skills" class="nav-link-item">Skills</a>
+        <a href="#projects" class="nav-link-item">Projects</a>
+        <a href="#certifications" class="nav-link-item">Certifications</a>
+        <a href="#education" class="nav-link-item">Education</a>
+        <a href="#guestbook" class="nav-link-item">Guestbook</a>
+        <a href="#contact" class="nav-link-item">Contact</a>
       </div>
+
+      <!-- Professional Theme customizer switcher dropdown -->
+      <div class="theme-switcher">
+        <button class="theme-btn" aria-label="Select accent theme"><i class="fa-solid fa-palette"></i></button>
+        <div class="theme-dropdown glass-card">
+          <button class="theme-option" data-theme-value="cyber-indigo"><span class="dot dot-indigo"></span> Cyber Indigo</button>
+          <button class="theme-option" data-theme-value="neon-emerald"><span class="dot dot-emerald"></span> Neon Emerald</button>
+          <button class="theme-option" data-theme-value="nebula-sunset"><span class="dot dot-sunset"></span> Nebula Sunset</button>
+          <button class="theme-option" data-theme-value="solar-flare"><span class="dot dot-flare"></span> Solar Flare</button>
+        </div>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer glass">
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link-item">About</a>
+      <a href="#skills" class="drawer-link-item">Skills</a>
+      <a href="#projects" class="drawer-link-item">Projects</a>
+      <a href="#certifications" class="drawer-link-item">Certifications</a>
+      <a href="#education" class="drawer-link-item">Education</a>
+      <a href="#contact" class="drawer-link-item">Contact</a>
+      <div class="mobile-theme-row" style="margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-around; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Theme:</span>
+        <button class="mobile-theme-opt" data-theme-value="cyber-indigo" style="background:none; border:none; padding: 6px;"><span class="dot dot-indigo" style="width: 18px; height: 18px;"></span></button>
+        <button class="mobile-theme-opt" data-theme-value="neon-emerald" style="background:none; border:none; padding: 6px;"><span class="dot dot-emerald" style="width: 18px; height: 18px;"></span></button>
+        <button class="mobile-theme-opt" data-theme-value="nebula-sunset" style="background:none; border:none; padding: 6px;"><span class="dot dot-sunset" style="width: 18px; height: 18px;"></span></button>
+        <button class="mobile-theme-opt" data-theme-value="solar-flare" style="background:none; border:none; padding: 6px;"><span class="dot dot-flare" style="width: 18px; height: 18px;"></span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
   <header class="hero" id="home">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="container hero-grid">
-      <div class="reveal active">
-        <div class="eyebrow glass">
-          <i class="fa-solid fa-graduation-cap"></i>
-          B.Tech IT Student • Developer • Problem Solver
-        </div>
-        <h1>
-          Building a <span class="gradient">strong future</span><br />
-          through skills and projects.
-        </h1>
-        <p>
-          I am Ummadala Tharun, a B.Tech Information Technology student with hands-on project experience in Python, AI, and web technologies. I am looking for opportunities to learn, grow, and contribute as a future software professional.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
-          <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-code"></i> View Projects</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-card glass">
-            <h3>3+</h3>
-            <p>Academic Projects</p>
+    <div class="bg-glow"></div>
+    <!-- Animated Neon Spatials -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="container hero-container-new">
+      <div class="hero-grid-new">
+        <div class="hero-content reveal">
+          <div class="hero-greeting">HELLO, I’M</div>
+          <h1 class="hero-title">Tharun Ummadala</h1>
+          <p class="hero-subtitle"><span class="txt-rotate gradient" data-period="2000" data-rotate='[ "Python Full Stack Developer", "AI Solution Builder", "Flask Application Developer", "Frontend Web Developer", "Problem Solver & Innovator" ]'></span></p>
+          <div class="hero-status-badge">
+            <span class="status-badge-icon">🚀</span> Building AI & Full Stack Projects
           </div>
-          <div class="stat-card glass">
-            <h3>IT</h3>
-            <p>B.Tech Student</p>
+          <p class="hero-description">
+            Building intelligent web applications and AI-powered solutions that solve real-world problems. Passionate about Python, Full-Stack Development, and creating impactful digital experiences.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+            <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-code"></i> View Projects</a>
           </div>
-          <div class="stat-card glass">
-            <h3>85%</h3>
-            <p>Diploma Score</p>
+        </div>
+
+        <div class="hero-media reveal">
+          <div class="profile-container-new">
+            <div class="profile-shapes-wrap">
+              <!-- Floating Accent Shapes from mockup -->
+              <div class="profile-shape-dots-left"></div>
+              <div class="profile-shape-dots-right"></div>
+              <div class="profile-shape-crescent"></div>
+              <div class="profile-shape-circle"></div>
+              <div class="profile-shape-ring"></div>
+              <!-- Professional Profile Image -->
+              <div class="profile-img-frame">
+                <img src="images/halfpic.jpeg" alt="Tharun Ummadala" class="profile-img-new" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hero-card glass reveal">
-        <!-- ================= PROFILE IMAGE START ================= -->
-        <!-- Change only the file name below when you want to use another picture later -->
-        <!-- Current file name: halfpic.jpeg -->
-        <div class="profile-wrap">
-          <img src="halfpic.jpeg" alt="Ummadala Tharun Profile Photo" />
-          <div class="floating-badge glass">
-            <i class="fa-solid fa-user-graduate"></i>
+      <!-- Statistics Cards Row -->
+      <div class="hero-stats-new reveal">
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-laptop-code"></i>
           </div>
-          <div class="floating-note glass">
-            <h4>Career Focus</h4>
-            <p>Entry-level software opportunities, technical growth, and real-world problem solving.</p>
+          <div class="stat-text-new">
+            <h3><span class="counter" data-target="4">0</span>+</h3>
+            <p>Projects Completed</p>
           </div>
         </div>
-        <!-- ================= PROFILE IMAGE END ================= -->
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <div class="stat-text-new">
+            <h3>Python</h3>
+            <p>Full Stack Development</p>
+          </div>
+        </div>
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="stat-text-new">
+            <h3><span class="counter" data-target="2024">0</span> – <span class="counter" data-target="2027">0</span></h3>
+            <p>B.Tech Information Technology</p>
+          </div>
+        </div>
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="stat-text-new">
+            <h3>Open to</h3>
+            <p>Internships & Opportunities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
       </div>
     </div>
   </header>
 
-  <section class="section" id="about">
-    <div class="orb three"></div>
-    <div class="container">
-      <h2 class="section-title reveal">About Me</h2>
-      <p class="section-subtitle reveal">
-        A professional student portfolio designed to highlight academic strength, practical projects, and career potential.
-      </p>
-      <div class="about-grid">
-        <div class="card glass reveal">
-          <h3>Profile Summary</h3>
-          <p>
-            An enthusiastic Information Technology student with hands-on project experience, seeking an entry-level opportunity to apply technical skills, contribute to real-world solutions, and grow as a software professional.
-          </p>
-          <div class="tag-row">
-            <span>Quick Learner</span>
-            <span>Problem Solving</span>
-            <span>Team Player</span>
-            <span>Career Focused</span>
-          </div>
-        </div>
-        <div class="card glass reveal">
-          <h3>Highlights</h3>
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>B.Tech IT Student</strong>
-              Strong interest in software development, AI-based solutions, and technical growth.
-            </div>
-            <div class="mini-item">
-              <strong>Hands-on Project Experience</strong>
-              Built projects in Python, OpenCV, image processing, and automation systems.
-            </div>
-            <div class="mini-item">
-              <strong>Creative + Technical Blend</strong>
-              Combines technical learning with video editing and creative presentation skills.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="container">
-      <h2 class="section-title reveal">Technical Skills</h2>
-      <p class="section-subtitle reveal">
-        A focused foundation in programming, web technologies, and practical tools relevant for student opportunities and entry-level roles.
-      </p>
-      <div class="skills-grid">
-        <div class="skill-box glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-code"></i></div>
-          <h3>Programming</h3>
-          <p>Python, C (Basics)</p>
-        </div>
-        <div class="skill-box glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3>Web Technologies</h3>
-          <p>HTML, CSS</p>
-        </div>
-        <div class="skill-box glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-toolbox"></i></div>
-          <h3>Tools</h3>
-          <p>VS Code, OpenCV</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
-      <p class="section-subtitle reveal">
-        Academic and technical projects that reflect problem-solving ability, implementation skills, and practical learning.
-      </p>
-      <div class="project-grid">
-        <div class="project-card glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-hand"></i></div>
-          <h3>Brightness Control Using Hand Gestures</h3>
-          <p>Developed a real-time brightness control system using Python and OpenCV with gesture-based interaction.</p>
-          <div class="tag-row">
-            <span>Python</span>
-            <span>OpenCV</span>
-          </div>
-        </div>
-        <div class="project-card glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-seedling"></i></div>
-          <h3>TerraSight AI – Plant Monitoring System</h3>
-          <p>Built an AI-based system to monitor plant health using image processing for early detection.</p>
-          <div class="tag-row">
-            <span>AI</span>
-            <span>Image Processing</span>
-          </div>
-        </div>
-        <div class="project-card glass reveal">
-          <div class="icon-box"><i class="fa-solid fa-solar-panel"></i></div>
-          <h3>Solar Tracking System</h3>
-          <p>Designed a sensor-based system to track sunlight and improve solar panel efficiency.</p>
-          <div class="tag-row">
-            <span>Sensors</span>
-            <span>Automation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="education">
-    <div class="container">
-      <h2 class="section-title reveal">Education & Experience</h2>
-      <p class="section-subtitle reveal">
-        A summary of academic journey and early practical exposure.
-      </p>
-      <div class="about-grid">
-        <div class="card glass reveal">
-          <h3>Education</h3>
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>B.Tech IT – Andhra Loyola Institute</strong>
-              2024 – Present
-            </div>
-            <div class="mini-item">
-              <strong>Diploma EEE – Dhanekula Institute</strong>
-              2021 – 2024 • 85%
-            </div>
-            <div class="mini-item">
-              <strong>SSC – G.D.E.T.M.C High School</strong>
-              GPA: 9.8
-            </div>
-          </div>
-        </div>
-        <div class="card glass reveal">
-          <h3>Experience & Strengths</h3>
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>Trainee – Sunrise Elevators Company</strong>
-              Performed maintenance, troubleshooting, and gained real-time system exposure over 6 months.
-            </div>
-            <div class="mini-item">
-              <strong>Languages</strong>
-              English, Telugu, Hindi
-            </div>
-            <div class="mini-item">
-              <strong>Interests</strong>
-              Photography, Video Editing, Volleyball
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="resume">
-    <div class="container">
-      <div class="resume-banner glass reveal">
-        <h3>My Resume</h3>
-        <p>
-          Download my resume to view my academic background, technical skills, projects, and experience in a professional one-page format.
+  <main>
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <p class="section-subtitle reveal">
+          An overview of my academic background, practical experience, and professional goals.
         </p>
-        <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
-          <!-- ================= RESUME LINK START ================= -->
-          <!-- Change both links below if you want to use another resume later -->
-          <a href="https://1drv.ms/b/c/f0f5dd6673ede91d/IQCRUzUQbts_RKZfqIQ3koB4AZIzE32yXz0TAMKpToQuoow?e=83KaFY" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-file-arrow-down"></i> View Resume
-          </a>
-          <a href="https://1drv.ms/b/c/f0f5dd6673ede91d/IQCRUzUQbts_RKZfqIQ3koB4AZIzE32yXz0TAMKpToQuoow?e=83KaFY" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-download"></i> Download PDF
-          </a>
-          <!-- ================= RESUME LINK END ================= -->
+        <div class="about-grid">
+          <div class="card glass-card tilt-card about-card-premium reveal" style="grid-column: 1 / -1;">
+            <h3>Professional Profile</h3>
+            <p style="font-size: 1.15rem; line-height: 1.8;">
+              An enthusiastic Information Technology student with hands-on experience in AI-powered web applications, full-stack development, and intelligent software systems. Passionate about building clean, modern, and efficient digital solutions.
+            </p>
+            <div class="tag-row" style="margin-top: 24px;">
+              <span>Quick Learner</span>
+              <span>Problem Solving</span>
+              <span>Team Player</span>
+              <span>Career Focused</span>
+              <span>Full-Stack Development</span>
+              <span>AI Integration</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 class="section-title reveal">Contact</h2>
-      <p class="section-subtitle reveal">
-        Open to internships, student opportunities, and entry-level roles where I can learn and contribute.
-      </p>
-      <div class="contact-grid">
-        <div class="card glass reveal">
-          <h3>Get in Touch</h3>
-          <p>
-            I am interested in opportunities that help me apply my technical skills, improve through real-world work, and grow into a strong software professional.
-          </p>
-          <div class="contact-links">
-            <a class="contact-pill" href="mailto:tharunummadala@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a class="contact-pill" href="https://github.com/uTharun23" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a class="contact-pill" href="https://linkedin.com/in/tharun-ummadala-b54b083a3" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <p class="section-subtitle reveal">
+          Proficiencies in programming languages, web technologies, backend frameworks, and development tools.
+        </p>
+
+        <!-- Professional category filtering tabs -->
+        <div class="skills-filter-container reveal">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="core">Languages & Core</button>
+          <button class="filter-btn" data-filter="libs">Frameworks & Libs</button>
+          <button class="filter-btn" data-filter="tools">Databases & Tools</button>
+        </div>
+
+        <div class="skills-grid reveal">
+          <div class="skill-category glass-card tilt-card" data-category="core">
+            <div class="skill-category-header">
+              <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+              <h3>Languages & Core</h3>
+            </div>
+            <ul class="skills-list">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>C (Basics)</li>
+            </ul>
+          </div>
+
+          <div class="skill-category glass-card tilt-card" data-category="libs">
+            <div class="skill-category-header">
+              <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+              <h3>Frameworks & Libraries</h3>
+            </div>
+            <ul class="skills-list">
+              <li>Flask</li>
+              <li>React.js</li>
+              <li>OpenCV</li>
+            </ul>
+          </div>
+
+          <div class="skill-category glass-card tilt-card" data-category="tools">
+            <div class="skill-category-header">
+              <div class="icon-box"><i class="fa-solid fa-database"></i></div>
+              <h3>Database & Tools</h3>
+            </div>
+            <ul class="skills-list">
+              <li>MySQL</li>
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+            </ul>
           </div>
         </div>
-        <div class="card glass reveal">
-          <h3>Contact Details</h3>
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>Phone</strong>
-              +91 9182346637
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <p class="section-subtitle reveal">
+          A showcase of academic and personal projects demonstrating full-stack, AI, and computer vision skills.
+        </p>
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card glass-card tilt-card reveal">
+            <div>
+              <div class="project-header">
+                <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
+                <h3>AI Resume Intelligence System</h3>
+              </div>
+              <p>Developed an AI-powered resume analysis and job matching system using Python and Flask to analyze resumes, calculate match scores, and provide career suggestions.</p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>AI</span>
+                <span>Resume Analyzer</span>
+                <span>Job Matching</span>
+              </div>
             </div>
-            <div class="mini-item">
-              <strong>Email</strong>
-              tharunummadala@gmail.com
+            <div class="project-actions">
+              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <button class="btn-project btn-project-live open-project-modal" data-project="resume-intel">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
             </div>
-            <div class="mini-item">
-              <strong>Location</strong>
-              Vijayawada, Andhra Pradesh
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card glass-card tilt-card reveal">
+            <div>
+              <div class="project-header">
+                <div class="icon-box"><i class="fa-solid fa-seedling"></i></div>
+                <h3>TerraSight AI – Plant Monitoring System</h3>
+              </div>
+              <p>Built an AI-based agriculture monitoring system using image analysis algorithms for early detection of health issues in crops and automated plant health tracking.</p>
+              <div class="tag-row">
+                <span>AI</span>
+                <span>Image Processing</span>
+                <span>Python</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <button class="btn-project btn-project-live open-project-modal" data-project="terrasight">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card glass-card tilt-card reveal">
+            <div>
+              <div class="project-header">
+                <div class="icon-box"><i class="fa-solid fa-hand"></i></div>
+                <h3>Brightness Control Using Hand Gestures</h3>
+              </div>
+              <p>Developed a real-time computer vision system that lets users control their screen brightness with hand gestures, leveraging image processing frameworks.</p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>Computer Vision</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <button class="btn-project btn-project-live open-project-modal" data-project="brightness-control">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: AgriHelp-AI -->
+          <div class="project-card glass-card tilt-card reveal">
+            <div>
+              <div class="project-header">
+                <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
+                <h3>AgriHelp-AI</h3>
+              </div>
+              <p>Developed an AI-powered agricultural portal leveraging machine learning models to detect crop diseases from leaf scans, offer dynamic treatments, and guide soil parameters.</p>
+              <div class="tag-row">
+                <span>AI</span>
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Agriculture Tech</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/uTharun23/AgriHelp-AI" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <button class="btn-project btn-project-live open-project-modal" data-project="agrihelp-ai">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <h2 class="section-title reveal">Certifications</h2>
+        <p class="section-subtitle reveal">
+          Validation of my learning process and engineering milestones.
+        </p>
+        
+        <div class="certs-grid">
+          <!-- Cert 1: Infosys Springboard -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/pythonfundamendals.png" alt="Python Fundamentals Certificate" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-award fallback-icon"></i>
+                <span class="fallback-issuer">Infosys Springboard</span>
+                <span class="fallback-title">Python Fundamentals</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> Infosys Springboard</span>
+              </div>
+              <h3>Python Fundamentals</h3>
+              <p>Mastered core Python programming concepts, data structures, and computer science methodologies.</p>
+              <div class="cert-actions">
+                <a href="certifications/pythonfundamendals.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert">
+                  <i class="fa-solid fa-eye"></i> View
+                </a>
+                <a href="https://verify.onwingspan.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cert">
+                  <i class="fa-solid fa-shield-check"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: NPTEL -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/NPTEL.png" alt="NPTEL Certification" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-graduation-cap fallback-icon"></i>
+                <span class="fallback-issuer">NPTEL</span>
+                <span class="fallback-title">Elite Academic Course</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> NPTEL</span>
+              </div>
+              <h3>NPTEL Certification</h3>
+              <p>Successfully completed academic specialization courses under elite national engineering mentorship.</p>
+              <div class="cert-actions">
+                <a href="certifications/NPTEL.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 3: IBM SkillsBuild -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/Completion Certificate _ SkillsBuild.png" alt="IBM SkillsBuild Certificate" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-briefcase fallback-icon"></i>
+                <span class="fallback-issuer">IBM SkillsBuild</span>
+                <span class="fallback-title">AI + Sustainability Internship</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> IBM SkillsBuild</span>
+              </div>
+              <h3>AI & Sustainability</h3>
+              <p>Completed practical traineeship incorporating sustainability design principles into AI software systems.</p>
+              <div class="cert-actions">
+                <a href="certifications/Completion Certificate _ SkillsBuild.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 4: EY & Microsoft -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/microsoft.png" alt="EY & Microsoft AI Passport" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-passport fallback-icon"></i>
+                <span class="fallback-issuer">EY & Microsoft</span>
+                <span class="fallback-title">AI Skills Passport</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> EY & Microsoft</span>
+              </div>
+              <h3>AI Skills Passport</h3>
+              <p>Validated core AI fundamentals and cloud application pathways developed by EY and Microsoft teams.</p>
+              <div class="cert-actions">
+                <a href="certifications/microsoft.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 5: HTML/CSS -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/htmlcss.png" alt="HTML/CSS Certification" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-file-code fallback-icon"></i>
+                <span class="fallback-issuer">Udemy / Self-paced</span>
+                <span class="fallback-title">HTML & CSS Certificate</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> Udemy / Academy</span>
+              </div>
+              <h3>HTML/CSS Certification</h3>
+              <p>Mastered modern styling and structure standard layouts, semantic elements, and responsive designs.</p>
+              <div class="cert-actions">
+                <a href="certifications/htmlcss.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 6: DSA -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/dsa.png" alt="DSA Certification" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-network-wired fallback-icon"></i>
+                <span class="fallback-issuer">Udemy / Self-paced</span>
+                <span class="fallback-title">DSA Certification</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> Udemy / Academy</span>
+              </div>
+              <h3>DSA Certification</h3>
+              <p>Acquired expertise in algorithms, complexity analysis, and object relational data organization structures.</p>
+              <div class="cert-actions">
+                <a href="certifications/dsa.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 7: Generative AI -->
+          <div class="cert-card glass-card tilt-card reveal">
+            <div class="cert-preview-container">
+              <img src="images/certifications/genai.png" alt="Generative AI Certification" class="cert-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-preview-fallback">
+                <div class="fallback-badge-glow"></div>
+                <i class="fa-solid fa-brain fallback-icon"></i>
+                <span class="fallback-issuer">Udemy / Self-paced</span>
+                <span class="fallback-title">Generative AI Certificate</span>
+              </div>
+            </div>
+            <div class="cert-details">
+              <div class="cert-meta">
+                <span class="cert-issuer"><i class="fa-solid fa-building"></i> Udemy / Academy</span>
+              </div>
+              <h3>Generative AI</h3>
+              <p>Gained hands-on knowledge in LLMs, prompt engineering concepts, and neural network foundations.</p>
+              <div class="cert-actions">
+                <a href="certifications/genai.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-cert" style="width: 100%;">
+                  <i class="fa-solid fa-eye"></i> View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title reveal">Academic Journey</h2>
+        <p class="section-subtitle reveal">
+          Timeline of my formal academic qualifications and practical industrial exposure.
+        </p>
+        <div class="about-grid">
+          <div class="card glass-card tilt-card reveal">
+            <h3>Education</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Pursuing B.Tech in Information Technology</h4>
+                  <span class="timeline-institution">Andhra Loyola Institute of Engineering and Technology, Vijayawada</span>
+                  <span class="timeline-date">2024 – 2027</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Diploma in Electrical and Electronics Engineering (EEE)</h4>
+                  <span class="timeline-institution">Dhanekula Institute of Engineering & Technology</span>
+                  <span class="timeline-date">2021 – 2024</span>
+                  <p class="timeline-meta">Score: 85%</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Secondary School Certificate (SSC)</h4>
+                  <span class="timeline-institution">G.D.E.T.M.C High School</span>
+                  <p class="timeline-meta">GPA: 9.8</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card glass-card tilt-card reveal">
+            <h3>Experience & Background</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Technical Trainee</h4>
+                  <span class="timeline-institution">Sunrise Elevators Company</span>
+                  <span class="timeline-date">6 Months</span>
+                  <p class="timeline-meta">Acquired practical hardware skills in troubleshooting, control boards, and electrical automation systems maintenance.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Professional Competencies</h4>
+                  <p class="timeline-meta">Effective multi-lingual communicator (English, Telugu, Hindi). Proficient in digital media layout design, creative editing production, and technical presentation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Banner -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="resume-banner glass-card tilt-card reveal">
+          <h3>View & Download Resume</h3>
+          <p>
+            Review my detailed qualifications, course milestones, and project summaries in a standard PDF layout.
+          </p>
+          <div class="resume-actions">
+            <a href="Ummadala_Tharun_Final_Resume (1).pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-file-lines"></i> Open Resume
+            </a>
+            <a href="Ummadala_Tharun_Final_Resume (1).pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" download="Ummadala_Tharun_Final_Resume.pdf">
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guestbook Section -->
+    <section class="section" id="guestbook">
+      <div class="container">
+        <h2 class="section-title reveal">Digital Guestbook</h2>
+        <p class="section-subtitle reveal">
+          Leave a message, signature, or feedback below to let me know you visited! Your note will be saved on our live visitor wall.
+        </p>
+        <div class="guestbook-grid reveal">
+          <!-- Sign Form -->
+          <div class="card glass-card guestbook-form-card">
+            <h3>Sign the Guestbook</h3>
+            <form id="guestbook-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gb-name">Your Name</label>
+                  <input type="text" id="gb-name" required placeholder="Alice Cooper" />
+                </div>
+                <div class="form-group">
+                  <label for="gb-role">Role / Designation</label>
+                  <input type="text" id="gb-role" placeholder="Developer / Recruiter" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="gb-message">Message</label>
+                <textarea id="gb-message" rows="3" required placeholder="Hey Tharun, checked out your portfolio! Love the AI integration projects. Keep up the great work!"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">
+                <i class="fa-solid fa-pen-nib"></i> Sign Wall
+              </button>
+            </form>
+          </div>
+          <!-- Wall of Signatures -->
+          <div class="guestbook-wall-card">
+            <div class="guestbook-wall-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h3 style="margin-bottom: 0;"><i class="fa-solid fa-comments"></i> Visitor Wall</h3>
+              <span class="visitor-counter glass-pill" id="visitor-count" style="font-size: 0.8rem; font-weight: 700; padding: 4px 12px;">0 Signatures</span>
+            </div>
+            <div class="guestbook-messages-container" id="guestbook-messages">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="section-subtitle reveal">
+          Get in touch for internships, entry-level opportunities, and collaborations.
+        </p>
+        <div class="contact-grid">
+          <div class="card glass-card reveal">
+            <h3>Get in Touch</h3>
+            <p style="margin-bottom: 24px;">
+              I am open to discussions about software development roles, internships, and technical collaborations. Send me a message or connect through my social profiles.
+            </p>
+            <div class="contact-links">
+              <a class="contact-pill" href="mailto:tharunummadala@gmail.com">
+                <i class="fa-solid fa-envelope"></i> Email
+              </a>
+              <a class="contact-pill" href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a class="contact-pill" href="https://linkedin.com/in/tharun-ummadala-b54b083a3" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+            
+            <div class="contact-details-list" style="margin-top: 36px; display: flex; flex-direction: column; gap: 16px;">
+              <div class="mini-item">
+                <i class="fa-solid fa-envelope mini-icon"></i>
+                <div>
+                  <strong>Email</strong>
+                  <span style="color: var(--muted); font-size: 0.94rem;">tharunummadala@gmail.com</span>
+                </div>
+              </div>
+              <div class="mini-item">
+                <i class="fa-solid fa-location-dot mini-icon"></i>
+                <div>
+                  <strong>Location</strong>
+                  <span style="color: var(--muted); font-size: 0.94rem;">Vijayawada, Andhra Pradesh, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card glass-card tilt-card reveal">
+            <h3>Send a Message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" required placeholder="John Doe" />
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <input type="email" id="form-email" required placeholder="john@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="5" required placeholder="Hi Tharun, I would like to talk about..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; border: none;">
+                <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                <span class="btn-loader hidden"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top FAB with circular scroll progress -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <svg class="progress-ring" width="48" height="48">
+      <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="3" fill="transparent" r="20" cx="24" cy="24"/>
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Elegant floating toast notification wrapper -->
+  <div id="toast-container"></div>
+
+  <!-- Premium Project Details Modal -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="modal-project-details">
+        <!-- Dynamically populated from JS -->
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Dynamic AI Chatbot Assistant Widget -->
+  <div class="chatbot-widget chatbot-toggle" id="chatbot-widget">
+    <button class="chatbot-trigger" id="chatbot-trigger" aria-label="Ask Tharun's AI">
+      <span class="chatbot-pulse"></span>
+      <i class="fa-solid fa-robot"></i>
+    </button>
+    <div class="chatbot-window glass-card" id="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar">
+          <i class="fa-solid fa-robot"></i>
+          <span class="online-indicator"></span>
+        </div>
+        <div class="chatbot-header-info">
+          <h4>Tharun AI Bot</h4>
+          <p>Assistant • Online</p>
+        </div>
+        <button class="chatbot-close-btn" id="chatbot-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="chat-bubble bot-msg">
+          Hi there! I am Tharun's AI assistant. Ask me anything about his projects, skills, or studies!
+        </div>
+      </div>
+      <div class="chatbot-quick-replies" id="chatbot-quick-replies">
+        <!-- Quick Reply Suggestion Pills -->
+      </div>
+      <form class="chatbot-input-area" id="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." required autocomplete="off" />
+        <button type="submit" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
-      © 2026 Ummadala Tharun • B.Tech IT Student Portfolio
+      <p>© 2026 Tharun Ummadala Portfolio. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach((item) => observer.observe(item));
-  </script>
+  <!-- Canvas Confetti & Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
