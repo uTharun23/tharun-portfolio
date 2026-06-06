@@ -37,8 +37,13 @@
 
       <!-- Professional Theme customizer switcher dropdown -->
       <div class="theme-switcher">
-        <button class="theme-btn" aria-label="Select accent theme"><i class="fa-solid fa-palette"></i></button>
-        <div class="theme-dropdown glass-card">
+        <button class="theme-btn" id="mode-btn" aria-label="Toggle theme mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="theme-btn" id="theme-btn" aria-label="Select accent theme">
+          <i class="fa-solid fa-palette"></i>
+        </button>
+        <div class="theme-dropdown glass-card" id="theme-dropdown">
           <button class="theme-option" data-theme-value="cyber-indigo"><span class="dot dot-indigo"></span> Cyber Indigo</button>
           <button class="theme-option" data-theme-value="neon-emerald"><span class="dot dot-emerald"></span> Neon Emerald</button>
           <button class="theme-option" data-theme-value="nebula-sunset"><span class="dot dot-sunset"></span> Nebula Sunset</button>
@@ -61,12 +66,23 @@
       <a href="#certifications" class="drawer-link-item">Certifications</a>
       <a href="#education" class="drawer-link-item">Education</a>
       <a href="#contact" class="drawer-link-item">Contact</a>
-      <div class="mobile-theme-row" style="margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-around; align-items: center;">
-        <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Theme:</span>
-        <button class="mobile-theme-opt" data-theme-value="cyber-indigo" style="background:none; border:none; padding: 6px;"><span class="dot dot-indigo" style="width: 18px; height: 18px;"></span></button>
-        <button class="mobile-theme-opt" data-theme-value="neon-emerald" style="background:none; border:none; padding: 6px;"><span class="dot dot-emerald" style="width: 18px; height: 18px;"></span></button>
-        <button class="mobile-theme-opt" data-theme-value="nebula-sunset" style="background:none; border:none; padding: 6px;"><span class="dot dot-sunset" style="width: 18px; height: 18px;"></span></button>
-        <button class="mobile-theme-opt" data-theme-value="solar-flare" style="background:none; border:none; padding: 6px;"><span class="dot dot-flare" style="width: 18px; height: 18px;"></span></button>
+      <div class="mobile-theme-section" style="margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="mobile-mode-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Mode:</span>
+          <div style="display: flex; gap: 8px;">
+            <button class="mobile-mode-opt" data-mode-value="dark" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"><i class="fa-solid fa-moon"></i> Dark</button>
+            <button class="mobile-mode-opt" data-mode-value="light" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"><i class="fa-solid fa-sun"></i> Light</button>
+          </div>
+        </div>
+        <div class="mobile-theme-row" style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Accent:</span>
+          <div style="display: flex; gap: 8px;">
+            <button class="mobile-theme-opt" data-theme-value="cyber-indigo" style="background:none; border:none; padding: 6px;"><span class="dot dot-indigo" style="width: 18px; height: 18px;"></span></button>
+            <button class="mobile-theme-opt" data-theme-value="neon-emerald" style="background:none; border:none; padding: 6px;"><span class="dot dot-emerald" style="width: 18px; height: 18px;"></span></button>
+            <button class="mobile-theme-opt" data-theme-value="nebula-sunset" style="background:none; border:none; padding: 6px;"><span class="dot dot-sunset" style="width: 18px; height: 18px;"></span></button>
+            <button class="mobile-theme-opt" data-theme-value="solar-flare" style="background:none; border:none; padding: 6px;"><span class="dot dot-flare" style="width: 18px; height: 18px;"></span></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -124,31 +140,34 @@
             <p>Projects Completed</p>
           </div>
         </div>
+
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="stat-text-new">
+            <h3>Python & Flask</h3>
+            <p>Developer</p>
+          </div>
+        </div>
+
+        <div class="stat-card-new glass-card tilt-card">
+          <div class="stat-icon-wrapper-new">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="stat-text-new">
+            <h3>Full Stack</h3>
+            <p>Development</p>
+          </div>
+        </div>
+
         <div class="stat-card-new glass-card tilt-card">
           <div class="stat-icon-wrapper-new">
             <i class="fa-solid fa-user-graduate"></i>
           </div>
           <div class="stat-text-new">
-            <h3>Python</h3>
-            <p>Full Stack Development</p>
-          </div>
-        </div>
-        <div class="stat-card-new glass-card tilt-card">
-          <div class="stat-icon-wrapper-new">
-            <i class="fa-solid fa-calendar-days"></i>
-          </div>
-          <div class="stat-text-new">
-            <h3><span class="counter" data-target="2024">0</span> – <span class="counter" data-target="2027">0</span></h3>
-            <p>B.Tech Information Technology</p>
-          </div>
-        </div>
-        <div class="stat-card-new glass-card tilt-card">
-          <div class="stat-icon-wrapper-new">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <div class="stat-text-new">
-            <h3>Open to</h3>
-            <p>Internships & Opportunities</p>
+            <h3>B.Tech IT</h3>
+            <p>(2024–2027)</p>
           </div>
         </div>
       </div>
@@ -270,8 +289,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="https://ai-resume-intelligence-system-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-demo">
+                <i class="fa-solid fa-play"></i> Live Demo
               </a>
               <button class="btn-project btn-project-live open-project-modal" data-project="resume-intel">
                 <i class="fa-solid fa-circle-info"></i> Details
@@ -294,8 +313,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="https://terra-sight-ai-3zns.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-demo">
+                <i class="fa-solid fa-play"></i> Live Demo
               </a>
               <button class="btn-project btn-project-live open-project-modal" data-project="terrasight">
                 <i class="fa-solid fa-circle-info"></i> Details
@@ -318,8 +337,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="https://brightness-control-with-hand-gestur.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-demo">
+                <i class="fa-solid fa-play"></i> Live Demo
               </a>
               <button class="btn-project btn-project-live open-project-modal" data-project="brightness-control">
                 <i class="fa-solid fa-circle-info"></i> Details
@@ -343,8 +362,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="https://github.com/uTharun23/AgriHelp-AI" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-git">
-                <i class="fa-brands fa-github"></i> GitHub
+              <a href="https://agri-help-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-demo">
+                <i class="fa-solid fa-play"></i> Live Demo
               </a>
               <button class="btn-project btn-project-live open-project-modal" data-project="agrihelp-ai">
                 <i class="fa-solid fa-circle-info"></i> Details

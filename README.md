@@ -10,7 +10,7 @@ Welcome to my professional developer portfolio. This website is designed to high
 
 ## 🚀 Key Features
 
-- **Dynamic Theme Customizer**: An interactive dropdown picker enabling visitors to switch between glowing accent schemes (Cyber Indigo, Neon Emerald, Nebula Sunset, and Solar Flare).
+- **Dynamic Theme Customizer**: An interactive dropdown and mode toggle enabling visitors to switch between **Light/Dark modes** and choose from four glowing accent schemes (Cyber Indigo, Neon Emerald, Nebula Sunset, and Solar Flare).
 - **Interactive AI Assistant Chatbot**: A floating helper bot in the corner that handles visitor queries about skills, contact info, and projects with realistic typing delay simulations and quick replies.
 - **Project Detail Overlays**: Click-triggered glassmorphic modals that load structured project descriptions, features, and custom client-server-AI architecture diagrams.
 - **Interactive Digital Guestbook**: A visitor wall allowing users to leave notes. Signatures are persisted locally (`localStorage`) and trigger a particle confetti effect upon success.

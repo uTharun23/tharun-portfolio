@@ -324,12 +324,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================================
-     5. Advanced Theme Customizer Accent Switcher
+     5. Advanced Theme Customizer Accent Switcher (Enhanced)
      ========================================================================== */
+  // Load and apply theme mode (dark/light)
+  const activeMode = localStorage.getItem("theme-mode") || "dark";
+  document.documentElement.setAttribute("data-theme-mode", activeMode);
+  
+  // Load and apply accent theme
   const activeTheme = localStorage.getItem("selected-theme") || "neon-emerald";
   document.documentElement.setAttribute("data-theme", activeTheme);
-  
-  // Set active class in navbar dropdown
+
+  const themeBtn = document.getElementById("theme-btn");
+  const themeDropdown = document.getElementById("theme-dropdown");
+  const modeBtn = document.getElementById("mode-btn");
+
+  // Toggle dropdown on click
+  if (themeBtn && themeDropdown) {
+    themeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      themeBtn.classList.toggle("active");
+      themeDropdown.classList.toggle("open");
+    });
+
+    // Close on click outside
+    document.addEventListener("click", (e) => {
+      if (!themeBtn.contains(e.target) && !themeDropdown.contains(e.target)) {
+        themeBtn.classList.remove("active");
+        themeDropdown.classList.remove("open");
+      }
+    });
+  }
+
+  // Update mode icon on load & click
+  const updateModeIcon = (mode) => {
+    if (!modeBtn) return;
+    const icon = modeBtn.querySelector("i");
+    if (icon) {
+      if (mode === "light") {
+        icon.className = "fa-solid fa-sun";
+      } else {
+        icon.className = "fa-solid fa-moon";
+      }
+    }
+  };
+  updateModeIcon(activeMode);
+
+  // Toggle mode on click
+  if (modeBtn) {
+    modeBtn.addEventListener("click", () => {
+      const currentMode = document.documentElement.getAttribute("data-theme-mode") || "dark";
+      const nextMode = currentMode === "dark" ? "light" : "dark";
+      setThemeMode(nextMode);
+    });
+  }
+
+  // Update navbar accent options active states
   const themeOptions = document.querySelectorAll(".theme-option");
   const updateThemeStates = (themeName) => {
     themeOptions.forEach(opt => {
@@ -342,24 +391,54 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   updateThemeStates(activeTheme);
 
+  // Set accent theme function
   const setTheme = (themeName) => {
     document.documentElement.setAttribute("data-theme", themeName);
     localStorage.setItem("selected-theme", themeName);
     updateThemeStates(themeName);
   };
 
-  // Attach navbar option clicks
+  // Attach navbar accent option clicks
   themeOptions.forEach(opt => {
     opt.addEventListener("click", () => {
       setTheme(opt.getAttribute("data-theme-value"));
     });
   });
 
-  // Attach mobile option clicks
+  // Mobile Drawer mode controls
+  const mobileModeOpts = document.querySelectorAll(".mobile-mode-opt");
+  const updateMobileModeStates = (modeName) => {
+    mobileModeOpts.forEach(btn => {
+      if (btn.getAttribute("data-mode-value") === modeName) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+  };
+  if (mobileModeOpts.length > 0) {
+    updateMobileModeStates(activeMode);
+  }
+
+  const setThemeMode = (modeName) => {
+    document.documentElement.setAttribute("data-theme-mode", modeName);
+    localStorage.setItem("theme-mode", modeName);
+    updateMobileModeStates(modeName);
+    updateModeIcon(modeName);
+  };
+
+  // Mobile Drawer theme controls
   const mobileThemeOpts = document.querySelectorAll(".mobile-theme-opt");
   mobileThemeOpts.forEach(opt => {
     opt.addEventListener("click", () => {
       setTheme(opt.getAttribute("data-theme-value"));
+    });
+  });
+
+  // Mobile Drawer mode controls clicks
+  mobileModeOpts.forEach(btn => {
+    btn.addEventListener("click", () => {
+      setThemeMode(btn.getAttribute("data-mode-value"));
     });
   });
 
