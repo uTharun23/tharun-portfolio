@@ -222,6 +222,12 @@
       transform: none;
     }
   }
+
+  @media (max-width: 576px) {
+    width: 100% !important;
+    justify-content: center !important;
+    align-self: center !important;
+  }
 }
 
 .val-err {

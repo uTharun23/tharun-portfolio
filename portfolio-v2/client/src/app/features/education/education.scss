@@ -144,3 +144,29 @@
     border-radius: 12px;
   }
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: 24px 20px !important;
+    h3 {
+      font-size: 1.35rem !important;
+      margin-bottom: 16px !important;
+    }
+  }
+  .timeline-list {
+    padding-left: 18px !important;
+  }
+  .timeline-dot {
+    left: -25px !important;
+  }
+  .resume-banner {
+    padding: 36px 20px !important;
+    h3 {
+      font-size: 1.6rem !important;
+    }
+    p {
+      font-size: 0.95rem !important;
+      margin-bottom: 24px !important;
+    }
+  }
+}

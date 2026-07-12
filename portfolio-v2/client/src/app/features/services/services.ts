@@ -69,7 +69,7 @@ export class Services implements AfterViewInit {
   }
 
   private checkScreenSize() {
-    this.isDesktop.set(window.innerWidth > 768);
+    this.isDesktop.set(window.innerWidth > 1024);
   }
 
   private initPathLength() {

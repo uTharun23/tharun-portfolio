@@ -182,3 +182,19 @@
   font-weight: 600;
   margin-top: 2px;
 }
+
+@media (max-width: 768px) {
+  .guestbook-form-card {
+    padding: 24px 20px !important;
+    h3 {
+      font-size: 1.3rem !important;
+      margin-bottom: 16px !important;
+    }
+  }
+  .guestbook-wall-card {
+    padding: 24px 20px !important;
+    h3 {
+      font-size: 1.3rem !important;
+    }
+  }
+}
