@@ -1,14 +1,33 @@
 @import './styles/variables.scss';
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+html {
   scroll-padding-top: 70px;
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
