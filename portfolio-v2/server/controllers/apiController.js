@@ -113,36 +113,31 @@ const getProjects = async (req, res, next) => {
   try {
     res.status(200).json([
       {
+        id: 'tharun-portfolio',
+        title: 'Full-Stack Developer Portfolio',
+        iconClass: 'fa-solid fa-laptop-code',
+        description: 'Built a responsive portfolio site using Angular 18 frontend and a serverless Node.js/Express API on Vercel.',
+        tags: ['Angular 18', 'Node.js', 'Express', 'MongoDB', 'Serverless'],
+        demoUrl: 'https://tharunummadala-portfolio.vercel.app/',
+        githubUrl: 'https://github.com/uTharun23/tharun-portfolio'
+      },
+      {
         id: 'resume-intel',
         title: 'AI Resume Intelligence System',
         iconClass: 'fa-solid fa-file-invoice',
-        description: 'Developed an AI-powered resume analysis and job matching system using Python and Flask to analyze resumes, calculate match scores, and provide career suggestions.',
-        tags: ['Python', 'Flask', 'AI', 'Resume Analyzer', 'Job Matching'],
-        demoUrl: 'https://ai-resume-intelligence-system-alpha.vercel.app/'
-      },
-      {
-        id: 'terrasight',
-        title: 'TerraSight AI – Plant Monitoring System',
-        iconClass: 'fa-solid fa-seedling',
-        description: 'Built an AI-based agriculture monitoring system using image analysis algorithms for early detection of health issues in crops and automated plant health tracking.',
-        tags: ['AI', 'Image Processing', 'Python'],
-        demoUrl: 'https://terra-sight-ai-3zns.vercel.app/'
-      },
-      {
-        id: 'brightness-control',
-        title: 'Brightness Control Using Hand Gestures',
-        iconClass: 'fa-solid fa-hand',
-        description: 'Developed a real-time computer vision system that lets users control their screen brightness with hand gestures, leveraging image processing frameworks.',
-        tags: ['Python', 'OpenCV', 'Computer Vision'],
-        demoUrl: 'https://brightness-control-with-hand-gestur.vercel.app/'
+        description: 'Developed a web platform using Python and Flask to automate resume analysis and job description matching.',
+        tags: ['Python', 'Flask', 'NLP', 'Resume Parser'],
+        demoUrl: 'https://ai-resume-intelligence-system-alpha.vercel.app/',
+        githubUrl: 'https://github.com/uTharun23/Ai-resume-intelligence-system'
       },
       {
         id: 'agrihelp-ai',
-        title: 'AgriHelp-AI',
+        title: 'AgriHelp-AI: Crop Disease & Soil Suitability Portal',
         iconClass: 'fa-solid fa-wheat-awn',
-        description: 'Developed an AI-powered agricultural portal leveraging machine learning models to detect crop diseases from leaf scans, offer dynamic treatments, and guide soil parameters.',
-        tags: ['AI', 'Python', 'Machine Learning', 'Agriculture Tech'],
-        demoUrl: 'https://agri-help-ai.vercel.app/'
+        description: 'Developed an ML-powered portal using Python to classify crop leaf diseases from uploaded scans.',
+        tags: ['Python', 'Machine Learning', 'Image Processing', 'Agriculture'],
+        demoUrl: 'https://agri-help-ai.vercel.app/',
+        githubUrl: 'https://github.com/uTharun23/AgriHelp-AI'
       }
     ]);
   } catch (error) {
