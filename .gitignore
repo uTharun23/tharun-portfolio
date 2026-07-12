@@ -1,1 +1,27 @@
-Html Practice 02-06-2026 (1)/
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.production
+/portfolio-v2/server/.env
+
+# Compiled Output
+dist/
+/portfolio-v2/client/dist/
+/portfolio-v2/client/tmp/
+/portfolio-v2/client/.angular/
+
+# IDE / Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Files
+.DS_Store
+Thumbs.db

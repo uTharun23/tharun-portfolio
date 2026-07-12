@@ -1,0 +1,218 @@
+@import '../../../styles/variables.scss';
+
+.services-section {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 120px 6% 140px !important;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px) !important;
+  background-size: 80px 80px !important;
+  position: relative;
+}
+
+.services-timeline-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 1350px;
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-top: 20px;
+  }
+}
+
+.timeline-badge-new {
+  display: inline-block; 
+  border: 1px solid #cbd5e1; 
+  border-radius: 100px; 
+  padding: 6px 18px; 
+  font-size: 0.82rem; 
+  font-weight: 700; 
+  color: #475569; 
+  margin-bottom: 24px; 
+  background: #ffffff; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.timeline-title-new {
+  font-size: clamp(2rem, 4.5vw, 3rem); 
+  font-weight: 900; 
+  line-height: 1.1; 
+  color: #0f172a; 
+  letter-spacing: -1.5px; 
+  margin-bottom: 24px; 
+  position: relative;
+}
+
+.hand-arrow {
+  position: absolute; 
+  bottom: -36px; 
+  right: 40px; 
+  width: 48px; 
+  height: 48px; 
+  color: #0f172a;
+}
+
+.timeline-desc-new {
+  color: #64748b; 
+  font-size: 1.05rem; 
+  font-weight: 500; 
+  line-height: 1.7;
+}
+
+.services-tag-card {
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 32px;
+  padding: 10px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.tag-hole-punch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  border: 1px solid #cbd5e1;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.tag-card-inner {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 24px;
+  background: #f8fafc;
+  margin-top: 36px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.6s ease;
+}
+
+.tag-card-num {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #94a3b8;
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin-bottom: 8px;
+  transition: color 0.6s ease;
+}
+
+.tag-card-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  transition: color 0.6s ease;
+}
+
+.tag-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.6s ease;
+}
+
+/* Active Highlight tags on Scroll */
+.services-tag-card.active {
+  background-color: #ff2a2a;
+  border-color: #ef4444;
+  box-shadow: 0 25px 50px rgba(255, 42, 42, 0.35);
+  transform: scale(1.03);
+
+  .tag-card-inner {
+    background-color: rgba(139, 0, 0, 0.35);
+  }
+
+  .tag-card-num {
+    color: #fca5a5;
+  }
+
+  .tag-card-title {
+    color: #ffffff;
+  }
+
+  .tag-card-desc {
+    color: #fee2e2;
+  }
+}
+
+/* Timeline positions desktop */
+@media (min-width: 769px) {
+  .tag-pos-1 { position: absolute; top: 10px; right: 8%; transform: rotate(5deg); }
+  .tag-pos-2 { position: absolute; top: 430px; left: 8%; transform: rotate(-5deg); }
+  .tag-pos-3 { position: absolute; top: 730px; right: 12%; transform: rotate(3deg); }
+  .tag-pos-4 { position: absolute; top: 1030px; left: 16%; transform: rotate(-3deg); }
+  
+  .services-tag-card:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+  .tag-pos-1:hover { transform: scale(1.05) rotate(4deg) translateY(-5px); }
+  .tag-pos-2:hover { transform: scale(1.05) rotate(-4deg) translateY(-5px); }
+  .tag-pos-3:hover { transform: scale(1.05) rotate(2deg) translateY(-5px); }
+  .tag-pos-4:hover { transform: scale(1.05) rotate(-2deg) translateY(-5px); }
+}
+
+/* Timeline connecting paths styling */
+.services-svg-path-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ready-text {
+  position: absolute; 
+  top: 1250px; 
+  left: 56%; 
+  font-family: 'Caveat', cursive; 
+  font-size: 2.2rem; 
+  color: #475569; 
+  transform: rotate(5deg);
+
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,81 @@
+<section class="services-section" id="services" #servicesSection>
+  <div class="services-timeline-container">
+    
+    <!-- Header Content -->
+    <div class="reveal active" style="max-width: 450px; margin-bottom: 60px;">
+      <div class="timeline-badge-new">
+        How it works
+      </div>
+      <h2 class="timeline-title-new">
+        Let us show you how we drive your brand to new heights
+        <!-- Hand-drawn arrow SVG -->
+        <svg class="hand-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 4 Q 10 10 15 15 M 15 15 L 10 15 M 15 15 L 15 10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </h2>
+      <p class="timeline-desc-new">
+        We follow a structured, creative, and highly technical approach to turn your ideas into robust full-stack applications.
+      </p>
+    </div>
+
+    <!-- Dashed SVG Connecting Path (Desktop only) -->
+    <svg *ngIf="isDesktop()" class="services-svg-path-container" id="svg-desktop-line" viewBox="0 0 1000 1350" preserveAspectRatio="none">
+      <!-- Guide line -->
+      <path d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 10" />
+      <!-- Animated drawing line -->
+      <path #dashedPath id="svg-dashed-path" d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200" 
+            fill="none" stroke="#ff2a2a" stroke-width="2" stroke-dasharray="8 10" [style.strokeDashoffset]="strokeDashoffset()" />
+    </svg>
+
+    <!-- Cards Grid -->
+    <div class="services-cards-grid">
+      
+      <!-- Card 1 -->
+      <div class="services-tag-card tag-pos-1 reveal active" id="tag-card-1" [class.active]="step1Active()">
+        <div class="tag-hole-punch"></div>
+        <div class="tag-card-inner">
+          <span class="tag-card-num">01</span>
+          <h3 class="tag-card-title">Define</h3>
+          <p class="tag-card-desc">We start by understanding your goals, user requirements, and technical constraints to lay a rock-solid foundation for the project.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="services-tag-card tag-pos-2 reveal active" id="tag-card-2" [class.active]="step2Active()">
+        <div class="tag-hole-punch"></div>
+        <div class="tag-card-inner">
+          <span class="tag-card-num">02</span>
+          <h3 class="tag-card-title">Design</h3>
+          <p class="tag-card-desc">Creating intuitive, pixel-perfect user interfaces and wireframes that guarantee an engaging and accessible user experience.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="services-tag-card tag-pos-3 reveal active" id="tag-card-3" [class.active]="step3Active()">
+        <div class="tag-hole-punch"></div>
+        <div class="tag-card-inner">
+          <span class="tag-card-num">03</span>
+          <h3 class="tag-card-title">Build</h3>
+          <p class="tag-card-desc">Developing scalable frontend architectures and secure backend systems using the latest modern tech stack.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="services-tag-card tag-pos-4 reveal active" id="tag-card-4" [class.active]="step4Active()">
+        <div class="tag-hole-punch"></div>
+        <div class="tag-card-inner">
+          <span class="tag-card-num">04</span>
+          <h3 class="tag-card-title">Launch</h3>
+          <p class="tag-card-desc">Rigorous testing, optimization, and seamless deployment to cloud infrastructure, followed by ongoing support.</p>
+        </div>
+      </div>
+
+      <!-- Hand-written bottom text -->
+      <div class="ready-text reveal active" *ngIf="showReadyText()">
+        Ready to be delivered!
+      </div>
+
+    </div>
+
+  </div>
+</section>

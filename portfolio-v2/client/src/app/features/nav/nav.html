@@ -1,0 +1,97 @@
+<!-- Premium Scroll Progress Indicator -->
+<div class="scroll-progress" [style.width]="scrollWidth()"></div>
+
+<!-- Navigation Header -->
+<nav class="glass-nav navbar" [class.scrolled]="isScrolled()">
+  <div class="container nav-wrap">
+    <a href="#home" class="logo" (click)="closeMenu()">Tharun<span>.</span></a>
+    
+    <div class="nav-links">
+      <a href="#about" class="nav-link-item">About</a>
+      <a href="#skills" class="nav-link-item">Skills</a>
+      <a href="#projects" class="nav-link-item">Projects</a>
+      <a href="#experience" class="nav-link-item">Experience</a>
+      <a href="#education" class="nav-link-item">Education</a>
+      <a href="#contact" class="nav-link-item">Contact</a>
+    </div>
+
+    <!-- Theme Customizer Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-btn" (click)="toggleMode()" aria-label="Toggle theme mode">
+        <i [class]="themeService.themeMode() === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+      </button>
+      <button class="theme-btn" [class.active]="isDropdownOpen()" (click)="toggleDropdown($event)" aria-label="Select accent theme">
+        <i class="fa-solid fa-palette"></i>
+      </button>
+      
+      <div class="theme-dropdown glass-card" [class.open]="isDropdownOpen()">
+        <button class="theme-option" [class.active]="themeService.accentTheme() === 'cinematic-red'" (click)="selectTheme('cinematic-red')">
+          <span class="dot dot-red" style="background:#ff2a2a;"></span> Cinematic Red
+        </button>
+        <button class="theme-option" [class.active]="themeService.accentTheme() === 'cyber-indigo'" (click)="selectTheme('cyber-indigo')">
+          <span class="dot dot-indigo"></span> Cyber Indigo
+        </button>
+        <button class="theme-option" [class.active]="themeService.accentTheme() === 'neon-emerald'" (click)="selectTheme('neon-emerald')">
+          <span class="dot dot-emerald"></span> Neon Emerald
+        </button>
+        <button class="theme-option" [class.active]="themeService.accentTheme() === 'nebula-sunset'" (click)="selectTheme('nebula-sunset')">
+          <span class="dot dot-sunset"></span> Nebula Sunset
+        </button>
+        <button class="theme-option" [class.active]="themeService.accentTheme() === 'solar-flare'" (click)="selectTheme('solar-flare')">
+          <span class="dot dot-flare"></span> Solar Flare
+        </button>
+      </div>
+    </div>
+
+    <button class="mobile-menu-toggle" (click)="toggleMenu()" aria-label="Toggle Menu">
+      <i class="fa-solid" [class.fa-bars]="!isMenuOpen()" [class.fa-xmark]="isMenuOpen()"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer Menu -->
+<div class="mobile-drawer glass" [class.open]="isMenuOpen()">
+  <div class="drawer-links">
+    <a href="#about" class="drawer-link-item" (click)="closeMenu()">About</a>
+    <a href="#skills" class="drawer-link-item" (click)="closeMenu()">Skills</a>
+    <a href="#projects" class="drawer-link-item" (click)="closeMenu()">Projects</a>
+    <a href="#experience" class="drawer-link-item" (click)="closeMenu()">Experience</a>
+    <a href="#education" class="drawer-link-item" (click)="closeMenu()">Education</a>
+    <a href="#contact" class="drawer-link-item" (click)="closeMenu()">Contact</a>
+    
+    <div class="mobile-theme-section" style="margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div class="mobile-mode-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Mode:</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="mobile-mode-opt" [class.active]="themeService.themeMode() === 'dark'" (click)="setThemeMode('dark')">
+            <i class="fa-solid fa-moon"></i> Dark
+          </button>
+          <button class="mobile-mode-opt" [class.active]="themeService.themeMode() === 'light'" (click)="setThemeMode('light')">
+            <i class="fa-solid fa-sun"></i> Light
+          </button>
+        </div>
+      </div>
+      
+      <div class="mobile-theme-row" style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;">Accent:</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="mobile-theme-opt" (click)="selectTheme('cinematic-red')">
+            <span class="dot dot-red" style="width: 18px; height: 18px; background:#ff2a2a; display: block; border-radius: 50%;"></span>
+          </button>
+          <button class="mobile-theme-opt" (click)="selectTheme('cyber-indigo')">
+            <span class="dot dot-indigo" style="width: 18px; height: 18px; display: block; border-radius: 50%;"></span>
+          </button>
+          <button class="mobile-theme-opt" (click)="selectTheme('neon-emerald')">
+            <span class="dot dot-emerald" style="width: 18px; height: 18px; display: block; border-radius: 50%;"></span>
+          </button>
+          <button class="mobile-theme-opt" (click)="selectTheme('nebula-sunset')">
+            <span class="dot dot-sunset" style="width: 18px; height: 18px; display: block; border-radius: 50%;"></span>
+          </button>
+          <button class="mobile-theme-opt" (click)="selectTheme('solar-flare')">
+            <span class="dot dot-flare" style="width: 18px; height: 18px; display: block; border-radius: 50%;"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

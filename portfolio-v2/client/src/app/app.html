@@ -1,0 +1,34 @@
+<!-- Cinematic Preloader Shutter -->
+<div *ngIf="showPreloader()" class="preloader-shutter" [class.loaded]="isPreloaded()">
+  <div class="preloader-logo">
+    <div class="preloader-bg-text">Tharun.</div>
+    <div class="preloader-fill-text">Tharun<span>.</span></div>
+  </div>
+</div>
+
+<!-- Cursor Glow Spotlight -->
+<div class="mouse-glow" 
+     [style.left.px]="mouseGlowX()" 
+     [style.top.px]="mouseGlowY()"
+     [style.opacity]="mouseGlowOpacity()">
+</div>
+
+<!-- Elegant Canvas Particle Background -->
+<canvas #particleCanvas id="canvas-particles"></canvas>
+
+<!-- Navigation Header -->
+<app-nav></app-nav>
+
+<main>
+  <!-- Router displays lazy-loaded features -->
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Cinematic Footer -->
+<app-footer></app-footer>
+
+<!-- Dynamic Chatbot Widget -->
+<app-chatbot></app-chatbot>
+
+<!-- Dynamic Toast Alerts -->
+<app-toast></app-toast>

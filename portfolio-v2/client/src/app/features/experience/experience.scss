@@ -1,0 +1,93 @@
+@import '../../../styles/variables.scss';
+
+.experience-card-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  padding: 36px;
+  border-radius: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+  height: 100%;
+
+  h3 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.55rem;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+  }
+
+  &:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: 0 20px 45px color-mix(in srgb, var(--accent) 5%, transparent);
+    transform: translateY(-4px);
+  }
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  padding-left: 24px;
+  border-left: 1px solid var(--card-border);
+  margin-top: 10px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -31px;
+  top: 7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.timeline-content {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+}
+
+.timeline-institution {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--bg-darker);
+  border: 1px solid var(--card-border);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline-meta {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.65;
+}

@@ -1,0 +1,23 @@
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title reveal active">Projects</h2>
+    <p class="section-subtitle reveal active">
+      A showcase of academic and personal projects demonstrating full-stack, AI, and computer vision skills.
+    </p>
+    
+    <div class="project-grid">
+      <app-project-card 
+        *ngFor="let proj of projectsList" 
+        [project]="proj" 
+        (openDetails)="openProjectDetails($event)">
+      </app-project-card>
+    </div>
+  </div>
+</section>
+
+<!-- Shared Projects Details Modal -->
+<app-modal 
+  [isOpen]="isModalOpen()" 
+  [project]="selectedProject()" 
+  (close)="closeModal()">
+</app-modal>

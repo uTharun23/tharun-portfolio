@@ -1,0 +1,56 @@
+<div class="chatbot-widget" [class.open]="isOpen()">
+  <!-- Trigger Button -->
+  <button class="chatbot-trigger" (click)="toggleChat()" aria-label="Ask Tharun's AI">
+    <span class="chatbot-pulse"></span>
+    <i class="fa-solid fa-robot"></i>
+  </button>
+  
+  <!-- Chat Window -->
+  <div class="chatbot-window glass-card" [class.open]="isOpen()">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar">
+        <i class="fa-solid fa-robot"></i>
+        <span class="online-indicator"></span>
+      </div>
+      <div class="chatbot-header-info">
+        <h4>Tharun AI Bot</h4>
+        <p>Assistant • Online</p>
+      </div>
+      <button class="chatbot-close-btn" (click)="closeChat()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <!-- Chat Messages -->
+    <div class="chatbot-messages" #chatMessages>
+      <div *ngFor="let msg of chatbotService.messages()" 
+           class="chat-bubble" 
+           [class.user-msg]="msg.sender === 'user'" 
+           [class.bot-msg]="msg.sender === 'bot'">
+        {{ msg.text }}
+      </div>
+      
+      <!-- Typing indicator -->
+      <div *ngIf="chatbotService.isTyping()" class="chat-bubble bot-msg typing">
+        <i class="fa-solid fa-ellipsis fa-bounce"></i>
+      </div>
+    </div>
+    
+    <!-- Quick Replies -->
+    <div class="chatbot-quick-replies" *ngIf="!chatbotService.isTyping()">
+      <button *ngFor="let qr of quickReplies" class="qr-pill" (click)="selectQuickReply(qr)">
+        {{ qr }}
+      </button>
+    </div>
+    
+    <!-- Input Form -->
+    <form class="chatbot-input-area" (ngSubmit)="onSubmit()">
+      <input type="text" 
+             name="userInputField"
+             [ngModel]="userInput()" 
+             (ngModelChange)="userInput.set($event)"
+             placeholder="Type a message..." 
+             required 
+             autocomplete="off" />
+      <button type="submit" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section-title reveal active">Technical Skills</h2>
+    <p class="section-subtitle reveal active">
+      Proficiencies in programming languages, web technologies, backend frameworks, and development tools.
+    </p>
+
+    <!-- Professional category filtering tabs -->
+    <div class="skills-filter-container reveal active">
+      <button class="filter-btn" [class.active]="selectedFilter() === 'all'" (click)="setFilter('all')">All Skills</button>
+      <button class="filter-btn" [class.active]="selectedFilter() === 'core'" (click)="setFilter('core')">Languages & Core</button>
+      <button class="filter-btn" [class.active]="selectedFilter() === 'libs'" (click)="setFilter('libs')">Frameworks & Web Tech</button>
+      <button class="filter-btn" [class.active]="selectedFilter() === 'tools'" (click)="setFilter('tools')">Databases & Tools</button>
+    </div>
+
+    <div class="skills-grid reveal active">
+      <!-- Category 1: Core -->
+      <div class="skill-category glass-card tilt-card" 
+           [class.hidden]="selectedFilter() !== 'all' && selectedFilter() !== 'core'"
+           appTiltCard appSpotlightGlow>
+        <div class="skill-category-header">
+          <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+          <h3>Languages & Core</h3>
+        </div>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>C (Basics)</li>
+          <li>OOP (Object Oriented Programming)</li>
+          <li>Data Structures & Algorithms</li>
+        </ul>
+      </div>
+
+      <!-- Category 2: Frameworks & Web Tech -->
+      <div class="skill-category glass-card tilt-card" 
+           [class.hidden]="selectedFilter() !== 'all' && selectedFilter() !== 'libs'"
+           appTiltCard appSpotlightGlow>
+        <div class="skill-category-header">
+          <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Frameworks & Web Tech</h3>
+        </div>
+        <ul class="skills-list">
+          <li>Flask</li>
+          <li>HTML5 & CSS3</li>
+          <li>RESTful APIs & JSON</li>
+          <li>Responsive Web Design</li>
+          <li>AI-Assisted Web Development</li>
+          <li>Prompt Engineering</li>
+          <li>API Integration</li>
+          <li>Full-Stack Development</li>
+        </ul>
+      </div>
+
+      <!-- Category 3: Tools & DB -->
+      <div class="skill-category glass-card tilt-card" 
+           [class.hidden]="selectedFilter() !== 'all' && selectedFilter() !== 'tools'"
+           appTiltCard appSpotlightGlow>
+        <div class="skill-category-header">
+          <div class="icon-box"><i class="fa-solid fa-database"></i></div>
+          <h3>Databases & Tools</h3>
+        </div>
+        <ul class="skills-list">
+          <li>MySQL</li>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

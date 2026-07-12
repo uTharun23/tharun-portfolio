@@ -1,0 +1,54 @@
+<footer class="cinematic-footer">
+  <!-- Top Row: Structured Professional Highlights -->
+  <div class="footer-top-grid">
+    <div>
+      <p class="footer-subheader"><span class="footer-num">01 /</span> Core Expertise</p>
+      <p>AI & Intelligent Web Systems</p>
+      <p>Python & Flask Development</p>
+      <p>Computer Vision (OpenCV)</p>
+    </div>
+    <div class="footer-col-center">
+      <p class="footer-subheader"><span class="footer-num">02 /</span> Academic Focus</p>
+      <p>B.Tech in IT (2024–2027)</p>
+      <p>Full-Stack Engineering</p>
+      <p>Generative AI Integration</p>
+    </div>
+    <div class="footer-col-right">
+      <p class="footer-subheader"><span class="footer-num">03 /</span> Location & Status</p>
+      <p>Vijayawada, India</p>
+      <p>Open to Opportunities</p>
+      <p class="status-indicator"><span class="status-dot"></span> Available Now</p>
+    </div>
+  </div>
+
+  <!-- Center Huge brand signature -->
+  <div class="footer-huge-brand-wrap">
+    <h2 class="footer-huge-brand">tharun<span class="brand-dot">.</span></h2>
+  </div>
+
+  <!-- Bottom Row: Essential Contact & Copyright -->
+  <div class="footer-bottom-grid">
+    <div>
+      <p style="color:var(--text); font-weight:700; font-size:0.75rem; letter-spacing:1px; margin-bottom:4px; text-transform:none;">Tharun Ummadala</p>
+      <p style="color:var(--muted); font-size:0.68rem; text-transform:none; letter-spacing:0.5px;">
+        &copy; 2026 | Built with Angular & Node.js
+      </p>
+    </div>
+    <div class="footer-col-center">
+      <a href="mailto:tharunummadala@gmail.com" class="footer-link-cinematic footer-email-link" style="text-transform:lowercase; letter-spacing:0.5px; font-weight:600;">tharunummadala@gmail.com</a>
+    </div>
+    <div class="footer-col-right">
+      <a href="https://github.com/uTharun23" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+      <a href="https://linkedin.com/in/tharun-ummadala-b54b083a3" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top FAB with circular scroll progress -->
+<button id="back-to-top" class="back-to-top-btn" [class.visible]="showBackToTop()" (click)="scrollToTop()" aria-label="Back to top">
+  <svg class="progress-ring" width="100%" height="100%" viewBox="0 0 48 48">
+    <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="3" fill="transparent" r="20" cx="24" cy="24"
+            [style.strokeDasharray]="circumference + ' ' + circumference" [style.strokeDashoffset]="strokeDashoffset()"/>
+  </svg>
+  <i class="fa-solid fa-arrow-up"></i>
+</button>

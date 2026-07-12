@@ -1,0 +1,99 @@
+<header class="hero" id="home">
+  <!-- Hero Section with Background Video -->
+  <div class="hero-video-container">
+    <video #heroVideo class="hero-video-bg" loop playsinline autoplay [muted]="isMuted()" poster="/images/half.jpg">
+      <source src="/images/hero-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="container hero-container-new">
+    <div class="hero-grid-new">
+      <div class="hero-content reveal active">
+        <div class="hero-greeting">HELLO, I’M</div>
+        <h1 class="hero-title">Tharun Ummadala</h1>
+        <p class="hero-subtitle">
+          <span class="wrap gradient">{{ currentTypedText() }}</span>
+        </p>
+        
+        <div class="hero-status-badge">
+          <span class="status-badge-icon">🚀</span> Building AI & Full Stack Projects
+        </div>
+        
+        <p class="hero-description">
+          Building intelligent web applications and AI-powered solutions that solve real-world problems. Passionate about Python, Full-Stack Development, and creating impactful digital experiences.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+          <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-code"></i> View Projects</a>
+        </div>
+      </div>
+
+      <!-- Right Side: Play & Audio controls Capsule -->
+      <div class="hero-video-controls-capsule reveal active">
+        <!-- Play / Pause Toggle -->
+        <button class="capsule-btn" (click)="toggleVideo()" [attr.aria-label]="videoButtonText()" [title]="videoButtonText()">
+          <svg id="play-icon" [class.hidden]="isVideoPlaying()" viewBox="0 0 24 24" class="control-svg"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="pause-icon" [class.hidden]="!isVideoPlaying()" viewBox="0 0 24 24" class="control-svg"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+
+        <div class="capsule-divider"></div>
+
+        <!-- Mute / Unmute Toggle -->
+        <button class="capsule-btn" (click)="toggleMute()" [attr.aria-label]="isMuted() ? 'Unmute' : 'Mute'" [title]="isMuted() ? 'Unmute' : 'Mute'">
+          <i class="fa-solid control-icon" [class.fa-volume-xmark]="isMuted()" [class.fa-volume-high]="!isMuted()"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Statistics Cards Row -->
+    <div #counterSection class="hero-stats-new reveal active">
+      <div class="stat-card-new glass-card" appTiltCard appSpotlightGlow>
+        <div class="stat-icon-wrapper-new">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <div class="stat-text-new">
+          <h3><span>{{ projectCount() }}</span>+</h3>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+
+      <div class="stat-card-new glass-card" appTiltCard appSpotlightGlow>
+        <div class="stat-icon-wrapper-new">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="stat-text-new">
+          <h3>Python & Flask</h3>
+          <p>Developer</p>
+        </div>
+      </div>
+
+      <div class="stat-card-new glass-card" appTiltCard appSpotlightGlow>
+        <div class="stat-icon-wrapper-new">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="stat-text-new">
+          <h3>Full Stack</h3>
+          <p>Development</p>
+        </div>
+      </div>
+
+      <div class="stat-card-new glass-card" appTiltCard appSpotlightGlow>
+        <div class="stat-icon-wrapper-new">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <div class="stat-text-new">
+          <h3>B.Tech IT</h3>
+          <p>(2024–2027)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</header>

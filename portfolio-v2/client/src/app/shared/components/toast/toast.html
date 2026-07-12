@@ -1,0 +1,8 @@
+<div id="toast-container">
+  <div *ngFor="let toast of toasts()" 
+       class="toast toast-{{ toast.type }}" 
+       [class.fade-out]="toast.isFading">
+    <i [class]="toast.type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation'"></i>
+    <div class="toast-message">{{ toast.message }}</div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<section class="section" id="certifications">
+  <div class="container">
+    <h2 class="section-title reveal active">Certifications</h2>
+    <p class="section-subtitle reveal active">
+      Validation of my learning process and engineering milestones.
+    </p>
+    
+    <div class="certs-grid">
+      <div *ngFor="let cert of certificationsList; let i = index" class="cert-card glass-card tilt-card reveal active" appTiltCard appSpotlightGlow>
+        <div class="cert-preview-container">
+          <img *ngIf="!imageErrors()[i]" 
+               [src]="cert.imgUrl" 
+               [alt]="cert.title + ' Certificate'" 
+               class="cert-preview-img" 
+               (error)="onImageError(i)" />
+               
+          <div *ngIf="imageErrors()[i]" class="cert-preview-fallback">
+            <div class="fallback-badge-glow"></div>
+            <i [class]="cert.iconClass + ' fallback-icon'"></i>
+            <span class="fallback-issuer">{{ cert.issuer }}</span>
+            <span class="fallback-title">{{ cert.title }}</span>
+          </div>
+        </div>
+        
+        <div class="cert-details">
+          <div class="cert-meta">
+            <span class="cert-issuer"><i class="fa-solid fa-building"></i> {{ cert.issuer }}</span>
+          </div>
+          <h3>{{ cert.title }}</h3>
+          <p>{{ cert.description }}</p>
+          
+          <div class="cert-actions">
+            <a [href]="cert.pdfUrl" target="_blank" rel="noopener noreferrer" 
+               class="btn btn-secondary btn-cert" [style.width]="cert.verifyUrl ? 'auto' : '100%'">
+              <i class="fa-solid fa-eye"></i> View{{ cert.verifyUrl ? '' : ' Certificate' }}
+            </a>
+            <a *ngIf="cert.verifyUrl" [href]="cert.verifyUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cert">
+              <i class="fa-solid fa-shield-check"></i> Verify
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

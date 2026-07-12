@@ -1,0 +1,27 @@
+{
+  "contacts": [],
+  "guestbook": [
+    {
+      "name": "Dr. K. Srinivasa Rao",
+      "role": "Professor at ALIET",
+      "message": "Tharun is a dedicated and highly curious student. His integration of AI concepts within full-stack development is promising.",
+      "createdAt": "2026-07-05T15:22:04.214Z"
+    },
+    {
+      "name": "Sarah Jenkins",
+      "role": "HR Tech Recruiter",
+      "message": "Stumbled upon your portfolio while looking for entry-level developers. The UI design is incredibly polished and premium. Your resume optimizer project sounds very practical!",
+      "createdAt": "2026-07-03T15:22:04.214Z"
+    },
+    {
+      "name": "Rohit Kumar",
+      "role": "B.Tech Classmate",
+      "message": "Awesome portfolio bro! The hand gesture brightness control project works smoothly. Looking forward to our next project together.",
+      "createdAt": "2026-07-01T15:22:04.214Z"
+    }
+  ],
+  "analytics": {
+    "visitor_count": 10,
+    "resume_download_count": 0
+  }
+}
