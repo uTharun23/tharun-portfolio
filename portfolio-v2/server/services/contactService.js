@@ -35,8 +35,13 @@ Message: ${message}`,
     `
   };
 
-  const info = await transporter.sendMail(mailOptions);
-  console.log('Email sent:', info.messageId);
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent:', info.messageId);
+  } catch (emailError) {
+    console.error('Nodemailer email notification failed to send:', emailError);
+    // Fallback: database save succeeded, so we do not crash the request
+  }
 
   return savedContact;
 };
