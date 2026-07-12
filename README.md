@@ -1,10 +1,10 @@
 # 🌐 Personal Portfolio Website
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://client-eight-navy-36.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://tharunummadala-portfolio.vercel.app/)
 
 Welcome to my professional developer portfolio. This website is designed to highlight my academic background, technical skills, projects, and personal milestones in a modern, interactive, and visually stunning layout.
 
-**Live Link:** [https://client-eight-navy-36.vercel.app/](https://client-eight-navy-36.vercel.app/)
+**Live Link:** [https://tharunummadala-portfolio.vercel.app/](https://tharunummadala-portfolio.vercel.app/)
 
 ---
 
