@@ -49,6 +49,12 @@
   @media (max-width: 1200px) {
     padding: 0 32px;
   }
+
+  @media (max-width: 992px) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
 }
 
 .logo {
@@ -60,6 +66,10 @@
   color: var(--text);
   margin-right: 48px;
   flex-shrink: 0;
+
+  @media (max-width: 992px) {
+    margin-right: 0 !important;
+  }
 
   span {
     color: var(--accent);
