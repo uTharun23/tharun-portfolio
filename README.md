@@ -4,7 +4,7 @@
 
 Welcome to my professional developer portfolio. This website is designed to highlight my academic background, technical skills, projects, and personal milestones in a modern, interactive, and visually stunning layout.
 
-**Live Link:** [https://tharun-portfolio-red.vercel.app/](https://tharun-portfolio-red.vercel.app/)
+**Live Link:**[ [https://tharun-portfolio-red.vercel.app/](https://tharun-portfolio-red.vercel.app/)](https://client-eight-navy-36.vercel.app/)
 
 ---
 
