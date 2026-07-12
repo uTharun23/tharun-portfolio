@@ -1,10 +1,10 @@
 # 🌐 Personal Portfolio Website
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://tharun-portfolio-red.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://client-eight-navy-36.vercel.app/)
 
 Welcome to my professional developer portfolio. This website is designed to highlight my academic background, technical skills, projects, and personal milestones in a modern, interactive, and visually stunning layout.
 
-**Live Link:** [https://tharun-portfolio-red.vercel.app/](https://tharun-portfolio-red.vercel.app/)
+**Live Link:** [https://client-eight-navy-36.vercel.app/](https://client-eight-navy-36.vercel.app/)
 
 ---
 
@@ -13,7 +13,7 @@ Welcome to my professional developer portfolio. This website is designed to high
 - **Dynamic Theme Customizer**: An interactive dropdown and mode toggle enabling visitors to switch between **Light/Dark modes** and choose from four glowing accent schemes (Cyber Indigo, Neon Emerald, Nebula Sunset, and Solar Flare).
 - **Interactive AI Assistant Chatbot**: A floating helper bot in the corner that handles visitor queries about skills, contact info, and projects with realistic typing delay simulations and quick replies.
 - **Project Detail Overlays**: Click-triggered glassmorphic modals that load structured project descriptions, features, and custom client-server-AI architecture diagrams.
-- **Interactive Digital Guestbook**: A visitor wall allowing users to leave notes. Signatures are persisted locally (`localStorage`) and trigger a particle confetti effect upon success.
+- **Interactive Digital Guestbook**: A visitor wall allowing users to leave notes, sign, and view others' notes, powered by the backend database.
 - **Dynamic Skills Filter**: Interactive filter tabs allowing recruiters to toggle between languages, frameworks, and databases/tools.
 - **Lightweight Particle Grid**: High-performance canvas-based particle network that responds to cursor drift.
 - **Responsive Layout**: Designed with fluid typography, responsive grid columns, and mobile-friendly drawer navigation.
@@ -22,7 +22,9 @@ Welcome to my professional developer portfolio. This website is designed to high
 
 ## 🛠 Tech Stack
 
-- **Core & Logic**: HTML5, Vanilla JavaScript (ES6+), and CSS3 (Custom properties & grid systems).
+- **Frontend**: Angular 18, TypeScript, SCSS.
+- **Backend**: Node.js, Express, Nodemailer SMTP.
+- **Database**: MongoDB (with automated local JSON file fallback storage).
 - **Icons & Fonts**: Google Fonts (Syne, Plus Jakarta Sans) and FontAwesome v6.
 - **Effects & Assets**: Canvas Confetti (particle celebration).
 
@@ -33,13 +35,12 @@ Welcome to my professional developer portfolio. This website is designed to high
 ```bash
 tharun-portfolio/
 │
-├── index.html         # Main markup file
-├── style.css          # Core layouts, variables, animations
-├── script.js           # Theme logic, chatbot, guestbook, modals
-├── certifications/    # Course credential pdfs
-├── images/            # Assets and fallback thumbnails
-├── .gitignore         # Build ignore rules
-└── README.md          # Project documentation
+├── portfolio-v2/
+│   ├── client/         # Angular 18 Frontend Client (Components, SCSS, Services)
+│   └── server/         # Node.js/Express Backend API (Routes, DB Controllers, Vercel Config)
+│
+├── .gitignore          # Git ignore definitions
+└── README.md           # Project documentation
 ```
 
 ---
@@ -50,11 +51,18 @@ tharun-portfolio/
 # Clone the repository
 git clone https://github.com/uTharun23/tharun-portfolio.git
 
-# Navigate into the folder
-cd tharun-portfolio
+# Navigate into the project folder
+cd tharun-portfolio/portfolio-v2
 
-# Open index.html directly in your browser
-open index.html
+# 1. Start Backend Server
+cd server
+npm install
+npm start
+
+# 2. Start Frontend Client (in a separate terminal tab)
+cd ../client
+npm install
+npm start
 ```
 
 ---
