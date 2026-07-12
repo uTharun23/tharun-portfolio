@@ -89,9 +89,11 @@ app.get('/', (req, res) => {
 // Global Error Handler Middleware
 app.use(errorHandler);
 
-// Start Server
-const server = app.listen(PORT, () => {
-  console.log(`Server is running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-});
+// Start Server (only locally, Vercel wraps the app export serverless)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running in development mode on port ${PORT}`);
+  });
+}
 
-module.exports = server; // Export for testing
+module.exports = app;
