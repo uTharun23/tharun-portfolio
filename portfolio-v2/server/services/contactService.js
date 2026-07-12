@@ -4,11 +4,29 @@ const dbFallback = require('../utils/dbFallback');
 const sendContactMessage = async (contactData) => {
   const { name, email, message } = contactData;
 
-  // Save to DB (or local JSON fallback)
-  const savedContact = await dbFallback.saveContact({ name, email, message });
+  // 1. Save to DB (or local JSON fallback)
+  let savedContact;
+  try {
+    savedContact = await dbFallback.saveContact({ name, email, message });
+    console.log('Database save success: Contact message stored successfully.');
+  } catch (dbError) {
+    console.error('Database save failure: Failed to write contact message to database.', dbError);
+    throw new Error('Database insertion failed: ' + dbError.message);
+  }
 
-  // Send email using Nodemailer config
+  // 2. Initialize Nodemailer transporter
   const transporter = createTransporter();
+
+  // 3. Verify SMTP transporter connection
+  try {
+    console.log('Attempting to verify SMTP transporter connection...');
+    await transporter.verify();
+    console.log('SMTP connection verified successfully.');
+  } catch (verifyError) {
+    console.error('SMTP connection verification failed. Stack trace:', verifyError);
+    throw new Error('SMTP Connection Verification Failed: ' + verifyError.message);
+  }
+
   const toEmail = process.env.CONTACT_TO_EMAIL || 'tharunummadala@gmail.com';
 
   const mailOptions = {
@@ -35,15 +53,15 @@ Message: ${message}`,
     `
   };
 
+  // 4. Send email and throw error if it fails
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent:', info.messageId);
+    console.log('Email send success: Message notification delivered.', info.messageId);
+    return savedContact;
   } catch (emailError) {
-    console.error('Nodemailer email notification failed to send:', emailError);
-    // Fallback: database save succeeded, so we do not crash the request
+    console.error('Email send failure: Failed to deliver SMTP notification. Stack trace:', emailError);
+    throw new Error('SMTP Email Delivery Failed: ' + emailError.message);
   }
-
-  return savedContact;
 };
 
 module.exports = {

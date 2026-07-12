@@ -9,6 +9,10 @@ const createTransporter = () => {
   if (!user || user === 'your-email@gmail.com' || !pass || pass === 'your-email-app-password') {
     console.warn('WARN: Email configurations (EMAIL_USER/EMAIL_PASS) are not set. Emails will be logged to the console instead of being sent.');
     return {
+      verify: async () => {
+        console.log('MOCK EMAIL: verification success');
+        return true;
+      },
       sendMail: async (options) => {
         console.log('=============== MOCK EMAIL SENT ===============');
         console.log(`To: ${options.to}`);
