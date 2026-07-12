@@ -6,8 +6,8 @@ const createTransporter = () => {
   const host = process.env.EMAIL_HOST || 'smtp.gmail.com';
   const port = parseInt(process.env.EMAIL_PORT, 10) || 587;
 
-  if (!user || user === 'your-email@gmail.com' || !pass || pass === 'your-email-app-password') {
-    console.warn('WARN: Email configurations (EMAIL_USER/EMAIL_PASS) are not set. Emails will be logged to the console instead of being sent.');
+  if (!user || user === 'your-email@gmail.com' || !pass || pass === 'your-email-app-password' || pass === 'placeholder_app_password') {
+    console.warn('WARN: Email configurations (EMAIL_USER/EMAIL_PASS) are not set or are using placeholders. Emails will be logged to the console instead of being sent.');
     return {
       verify: async () => {
         console.log('MOCK EMAIL: verification success');
