@@ -42,6 +42,26 @@ export class Projects {
       demoUrl: 'https://agri-help-ai.vercel.app/',
       githubUrl: 'https://github.com/uTharun23/AgriHelp-AI',
       imgUrl: 'images/projects/agrihelp_ai.png'
+    },
+    {
+      id: 'brightness-control',
+      title: 'Brightness Control Using Hand Gestures',
+      iconClass: 'fa-solid fa-hand',
+      description: 'Developed a real-time computer vision system that lets users control their screen brightness with hand gestures, leveraging image processing frameworks.',
+      tags: ['Python', 'OpenCV', 'Computer Vision'],
+      demoUrl: 'https://brightness-control-with-hand-gestur.vercel.app/',
+      githubUrl: 'https://github.com/uTharun23/Brightness-control-with-hand-gestures',
+      imgUrl: 'images/projects/brightness_control.png'
+    },
+    {
+      id: 'terrasight',
+      title: 'TerraSight AI: Plant Monitoring System',
+      iconClass: 'fa-solid fa-seedling',
+      description: 'Built an AI-based agriculture monitoring system using image analysis algorithms for early detection of health issues in crops and automated plant health tracking.',
+      tags: ['AI', 'Image Processing', 'Python', 'OpenCV'],
+      demoUrl: 'https://terra-sight-ai-3zns.vercel.app/',
+      githubUrl: 'https://github.com/uTharun23/terra-sight-ai',
+      imgUrl: 'images/projects/terrasight.png'
     }
   ];
 
@@ -108,6 +128,46 @@ export class Projects {
           <div class="arch-node server">AgriHelp ML Engine (Python)</div>
           <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Model Inference</div>
           <div class="arch-node ai">Soil & Pathogen Classification</div>
+        </div>
+      `
+    },
+    'brightness-control': {
+      title: 'Hand Gesture Brightness Controller',
+      category: 'Computer Vision & Human-Computer Interface',
+      description: 'A futuristic desktop automation tool that utilizes standard laptop webcams to dynamically modify system parameters. By identifying hand gesture landmarks, the system adjusts screen brightness seamlessly, reducing hardware button reliance.',
+      features: [
+        'Lightweight hand landmark detector running at 30+ FPS',
+        'Seamless overlay system communicating with OS brightness controls',
+        'Calibrated distance mapping to map relative finger-pinch percentages',
+        'Custom desktop notifications confirming gesture activation states'
+      ],
+      architecture: `
+        <div class="arch-diagram">
+          <div class="arch-node client">Integrated Laptop Webcam</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Frame Capture</div>
+          <div class="arch-node server">OpenCV & MediaPipe Landmarker</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Distance Mapping</div>
+          <div class="arch-node ai">OS Brightness Control API</div>
+        </div>
+      `
+    },
+    'terrasight': {
+      title: 'TerraSight AI: Plant Monitoring System',
+      category: 'Computer Vision & Agriculture',
+      description: 'An AI-powered agricultural health assistant designed for greenhouses and automated smart farms. Utilizing computer vision modules in Python, it analyzes crop leaf imagery to recognize early pathogens, measure hydration levels, and report overall stress indexes.',
+      features: [
+        'Real-time visual capture analysis for stress indicators',
+        'Pre-trained computer vision classifications for leaf spotting, rot, and bugs',
+        'Detailed dashboard graphing hydration curves and health cycles',
+        'Automated recommendations for localized climate/soil adjustment'
+      ],
+      architecture: `
+        <div class="arch-diagram">
+          <div class="arch-node client">Smart Camera System</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Image Stream</div>
+          <div class="arch-node server">OpenCV / NumPy Processing</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Pattern Analysis</div>
+          <div class="arch-node ai">TerraSight AI Leaf Classifier</div>
         </div>
       `
     }

@@ -138,6 +138,24 @@ const getProjects = async (req, res, next) => {
         tags: ['Python', 'Machine Learning', 'Image Processing', 'Agriculture'],
         demoUrl: 'https://agri-help-ai.vercel.app/',
         githubUrl: 'https://github.com/uTharun23/AgriHelp-AI'
+      },
+      {
+        id: 'brightness-control',
+        title: 'Brightness Control Using Hand Gestures',
+        iconClass: 'fa-solid fa-hand',
+        description: 'Developed a real-time computer vision system that lets users control their screen brightness with hand gestures, leveraging image processing frameworks.',
+        tags: ['Python', 'OpenCV', 'Computer Vision'],
+        demoUrl: 'https://brightness-control-with-hand-gestur.vercel.app/',
+        githubUrl: 'https://github.com/uTharun23/Brightness-control-with-hand-gestures'
+      },
+      {
+        id: 'terrasight',
+        title: 'TerraSight AI: Plant Monitoring System',
+        iconClass: 'fa-solid fa-seedling',
+        description: 'Built an AI-based agriculture monitoring system using image analysis algorithms for early detection of health issues in crops and automated plant health tracking.',
+        tags: ['AI', 'Image Processing', 'Python', 'OpenCV'],
+        demoUrl: 'https://terra-sight-ai-3zns.vercel.app/',
+        githubUrl: 'https://github.com/uTharun23/terra-sight-ai'
       }
     ]);
   } catch (error) {
