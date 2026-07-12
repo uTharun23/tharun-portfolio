@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../core/services/api.service';
 import { ToastService } from '../../core/services/toast.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -65,26 +66,75 @@ export class Contact implements OnInit {
     this.isSending.set(true);
     const { name, email, message } = this.contactForm.value;
 
-    this.apiService.submitContact({
+    const accessKey = environment.web3FormsKey;
+    const isPlaceholderKey = !accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+    if (isPlaceholderKey) {
+      // Fallback local mode: save to database only
+      console.warn('WARN: Web3Forms access key is not configured. Saving to local database instead.');
+      this.apiService.submitContact({
+        name: name.trim(),
+        email: email.trim(),
+        message: message.trim()
+      }).subscribe({
+        next: () => {
+          this.isSending.set(false);
+          this.toastService.show('Message saved successfully in DB! (Web3Forms Key not configured)', 'success');
+          this.contactForm.reset({
+            name: '',
+            email: '',
+            message: '',
+            permission: false
+          });
+        },
+        error: (err) => {
+          this.isSending.set(false);
+          this.toastService.show('Failed to save message to database.', 'error');
+        }
+      });
+      return;
+    }
+
+    // Web3Forms submission payload
+    const web3Payload = {
+      access_key: accessKey,
       name: name.trim(),
       email: email.trim(),
-      message: message.trim()
-    }).subscribe({
-      next: () => {
-        this.isSending.set(false);
-        this.toastService.show('Message sent successfully! Tharun will respond shortly.', 'success');
-        this.contactForm.reset({
-          name: '',
-          email: '',
-          message: '',
-          permission: false
-        });
+      message: message.trim(),
+      subject: `New Recruiter Message from ${name.trim()}`,
+      from_name: 'Tharun Ummadala Portfolio'
+    };
+
+    this.apiService.submitContactWeb3Forms(web3Payload).subscribe({
+      next: (response) => {
+        if (response.success) {
+          // Successfully sent via Web3Forms! Now save to DB in background for analytics/logs
+          this.apiService.submitContact({
+            name: name.trim(),
+            email: email.trim(),
+            message: message.trim()
+          }).subscribe({
+            next: () => console.log('Message logged in database.'),
+            error: (dbErr) => console.error('Failed to log message in database:', dbErr)
+          });
+
+          this.isSending.set(false);
+          this.toastService.show('Message sent successfully! Tharun will respond shortly.', 'success');
+          this.contactForm.reset({
+            name: '',
+            email: '',
+            message: '',
+            permission: false
+          });
+        } else {
+          this.isSending.set(false);
+          this.toastService.show(response.message || 'Failed to send message via Web3Forms.', 'error');
+        }
       },
       error: (err) => {
-        console.error('Failed to submit contact message:', err);
+        console.error('Web3Forms submission failed:', err);
         this.isSending.set(false);
-        const errorMsg = err.error?.error || 'Failed to send message. Please try again.';
-        this.toastService.show(errorMsg, 'error');
+        this.toastService.show('Failed to send message. Please check your network or Web3Forms Key.', 'error');
       }
     });
   }

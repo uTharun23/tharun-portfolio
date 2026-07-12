@@ -44,6 +44,10 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}/contact`, contact);
   }
 
+  submitContactWeb3Forms(payload: any): Observable<any> {
+    return this.http.post<any>('https://api.web3forms.com/submit', payload);
+  }
+
   getGuestbook(): Observable<GuestbookEntry[]> {
     return this.http.get<GuestbookEntry[]>(`${this.apiUrl}/guestbook`);
   }
