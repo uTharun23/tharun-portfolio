@@ -28,7 +28,7 @@
   transition: var(--transition);
 
   &.toast-success {
-    border-left: 4px solid #10b981;
+    box-shadow: inset 4px 0 0 #10b981, var(--shadow-lg), 0 10px 30px rgba(0, 0, 0, 0.25);
 
     i {
       color: #10b981;
@@ -36,7 +36,7 @@
   }
 
   &.toast-error {
-    border-left: 4px solid #ef4444;
+    box-shadow: inset 4px 0 0 #ef4444, var(--shadow-lg), 0 10px 30px rgba(0, 0, 0, 0.25);
 
     i {
       color: #ef4444;
