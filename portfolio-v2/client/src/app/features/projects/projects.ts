@@ -27,18 +27,18 @@ export class Projects {
       id: 'resume-intel',
       title: 'AI Resume Intelligence System',
       iconClass: 'fa-solid fa-file-invoice',
-      description: 'Developed a web platform using Python and Flask to automate resume analysis and job description matching.',
-      tags: ['Python', 'Flask', 'NLP', 'Resume Parser'],
+      description: 'Developed an AI-powered resume analysis and job matching system using Python and Flask to analyze resumes, calculate match scores, and provide career suggestions.',
+      tags: ['Python', 'Flask', 'AI', 'Resume Analyzer', 'Job Matching'],
       demoUrl: 'https://ai-resume-intelligence-system-alpha.vercel.app/',
       githubUrl: 'https://github.com/uTharun23/Ai-resume-intelligence-system',
       imgUrl: 'images/projects/resume_intel.png'
     },
     {
       id: 'agrihelp-ai',
-      title: 'AgriHelp-AI: Crop Disease & Soil Suitability Portal',
+      title: 'AgriHelp-AI',
       iconClass: 'fa-solid fa-wheat-awn',
-      description: 'Developed an ML-powered portal using Python to classify crop leaf diseases from uploaded scans.',
-      tags: ['Python', 'Machine Learning', 'Image Processing', 'Agriculture'],
+      description: 'Developed an AI-powered agricultural portal leveraging machine learning models to detect crop diseases from leaf scans, offer dynamic treatments, and guide soil parameters.',
+      tags: ['AI', 'Python', 'Machine Learning', 'Agriculture Tech'],
       demoUrl: 'https://agri-help-ai.vercel.app/',
       githubUrl: 'https://github.com/uTharun23/AgriHelp-AI',
       imgUrl: 'images/projects/agrihelp_ai.png'
@@ -55,10 +55,10 @@ export class Projects {
     },
     {
       id: 'terrasight',
-      title: 'TerraSight AI: Plant Monitoring System',
+      title: 'TerraSight AI – Plant Monitoring System',
       iconClass: 'fa-solid fa-seedling',
       description: 'Built an AI-based agriculture monitoring system using image analysis algorithms for early detection of health issues in crops and automated plant health tracking.',
-      tags: ['AI', 'Image Processing', 'Python', 'OpenCV'],
+      tags: ['AI', 'Image Processing', 'Python'],
       demoUrl: 'https://terra-sight-ai-3zns.vercel.app/',
       githubUrl: 'https://github.com/uTharun23/terra-sight-ai',
       imgUrl: 'images/projects/terrasight.png'
@@ -93,13 +93,13 @@ export class Projects {
     },
     'resume-intel': {
       title: 'AI Resume Intelligence System',
-      category: 'AI & Backend Development',
-      description: 'An advanced applicant tracking and analysis suite designed to analyze candidate resumes against job descriptions. Powered by a Flask backend and Python parsing engines, it scans files, maps competencies, and returns matching scores.',
+      category: 'AI & Full-Stack Development',
+      description: 'An advanced, intelligent applicant tracking and analysis suite designed to bridge the gap between candidate qualifications and technical recruiters\' needs. Powered by a Flask backend and Python parsing engines, it scans files, maps competencies, and returns rich visual insights.',
       features: [
-        'Advanced semantic parsing for PDF and DOCX files',
-        'NLP-driven competency matching scores for tech stack listings',
+        'Advanced PDF/DOCX parsing and semantic layout mapping',
+        'NLP-driven competency matching scores for standard tech listings',
         'Visual feedback dashboard showing key missing concepts/skills',
-        'Automated recommendations for professional update categories'
+        'Automated suggestions for professional portfolio updates'
       ],
       architecture: `
         <div class="arch-diagram">
@@ -107,27 +107,27 @@ export class Projects {
           <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Uploader</div>
           <div class="arch-node server">Flask Core Engine (Python)</div>
           <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> NLP Matching</div>
-          <div class="arch-node ai">AI Competency Mapper & Score</div>
+          <div class="arch-node ai">AI Competency Mapper & score</div>
         </div>
       `
     },
-    'agrihelp-ai': {
-      title: 'AgriHelp-AI: Crop Disease & Soil Suitability Portal',
-      category: 'Machine Learning & Precision Farming',
-      description: 'An ML-powered agricultural helper system built to assist farmers in real-time. It analyzes leaf images to identify pathogens, runs soil test suitability models, and integrates intelligent recommendation loops to provide precise treatment paths.',
+    'terrasight': {
+      title: 'TerraSight AI – Plant Monitoring',
+      category: 'Computer Vision & Agriculture',
+      description: 'An AI-powered agricultural health assistant designed for greenhouses and automated smart farms. Utilizing computer vision modules in Python, it analyzes crop leaf imagery to recognize early pathogens, measure hydration levels, and report overall stress indexes.',
       features: [
-        'Pathogen identifier using machine learning algorithms on crop images',
-        'Soil parameters analyzer with specialized suggestions',
-        'Dynamic fertilizer and treatment recommendation engine',
-        'Interactive portal to assist with query responses'
+        'Real-time visual capture analysis for stress indicators',
+        'Pre-trained computer vision classifications for leaf spotting, rot, and bugs',
+        'Detailed dashboard graphing hydration curves and health cycles',
+        'Automated recommendations for localized climate/soil adjustment'
       ],
       architecture: `
         <div class="arch-diagram">
-          <div class="arch-node client">Farmer Dashboard / Leaf Scan</div>
-          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Image Upload</div>
-          <div class="arch-node server">AgriHelp ML Engine (Python)</div>
-          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Model Inference</div>
-          <div class="arch-node ai">Soil & Pathogen Classification</div>
+          <div class="arch-node client">Smart Camera System</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Image Stream</div>
+          <div class="arch-node server">OpenCV / NumPy Processing</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Pattern Analysis</div>
+          <div class="arch-node ai">TerraSight AI Leaf Classifier</div>
         </div>
       `
     },
@@ -151,23 +151,23 @@ export class Projects {
         </div>
       `
     },
-    'terrasight': {
-      title: 'TerraSight AI: Plant Monitoring System',
-      category: 'Computer Vision & Agriculture',
-      description: 'An AI-powered agricultural health assistant designed for greenhouses and automated smart farms. Utilizing computer vision modules in Python, it analyzes crop leaf imagery to recognize early pathogens, measure hydration levels, and report overall stress indexes.',
+    'agrihelp-ai': {
+      title: 'AgriHelp-AI',
+      category: 'Artificial Intelligence & Precision Farming',
+      description: 'An AI-powered agricultural helper system built to assist farmers in real-time. It analyzes leaf images to identify pathogens, runs soil test suitability models, and integrates intelligent recommendation loops to provide precise treatment paths.',
       features: [
-        'Real-time visual capture analysis for stress indicators',
-        'Pre-trained computer vision classifications for leaf spotting, rot, and bugs',
-        'Detailed dashboard graphing hydration curves and health cycles',
-        'Automated recommendations for localized climate/soil adjustment'
+        'Pathogen identifier using machine learning algorithms on crop images',
+        'Soil parameters analyzer with specialized suggestions',
+        'Dynamic fertilizer and treatment recommendation engine',
+        'Interactive portal to assist with query responses'
       ],
       architecture: `
         <div class="arch-diagram">
-          <div class="arch-node client">Smart Camera System</div>
-          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Image Stream</div>
-          <div class="arch-node server">OpenCV / NumPy Processing</div>
-          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Pattern Analysis</div>
-          <div class="arch-node ai">TerraSight AI Leaf Classifier</div>
+          <div class="arch-node client">Farmer Dashboard / Leaf Scan</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> Image Upload</div>
+          <div class="arch-node server">AgriHelp ML Engine (Python)</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Model Inference</div>
+          <div class="arch-node ai">Soil & Pathogen Classification</div>
         </div>
       `
     }
