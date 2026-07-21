@@ -14,6 +14,16 @@ export class Projects {
   // Project listing array
   projectsList: ProjectItem[] = [
     {
+      id: 'qtywise',
+      title: 'QtyWise — Smart Purchase Quantity Advisory',
+      iconClass: 'fa-solid fa-calculator',
+      description: 'Developed a smart, mobile-first purchase quantity calculator using per-person portion formulas, real-world Indian market units (bunches, counts, kg/g), and bilingual (English/Telugu) support.',
+      tags: ['Vanilla JS', 'Node.js', 'Express', 'Vercel Serverless', 'Bilingual UI'],
+      demoUrl: 'https://qty-wise.vercel.app/',
+      githubUrl: 'https://github.com/uTharun23/QtyWise',
+      imgUrl: 'images/projects/qtywise.png'
+    },
+    {
       id: 'tharun-portfolio',
       title: 'Full-Stack Developer Portfolio',
       iconClass: 'fa-solid fa-laptop-code',
@@ -71,6 +81,27 @@ export class Projects {
 
   // Raw project descriptions mapping
   private projectDetailsMap: { [key: string]: ProjectDetailData } = {
+    'qtywise': {
+      title: 'QtyWise — Smart Purchase Quantity Advisory',
+      category: 'Web & Serverless Development',
+      description: 'A mobile-first grocery quantity advisor designed for households and community kitchens in Andhra Pradesh. Calculates exact purchase quantities using per-person portion formulas, traditional Indian market units (bunches, counts, kg/g), and storage alerts with client-side offline resilience.',
+      features: [
+        'Real-world market unit conversions (leafy bundles, egg counts, g/kg rounding)',
+        'Dynamic bilingual interface (English ↔ Telugu dual-token search & live rendering)',
+        'Editable numeric steppers with auto-clamping validation (1-100 people, 1-30 days)',
+        'LocalStorage shopping list manager with side drawer history management',
+        'Serverless Node.js Express REST API with client-side offline fallback'
+      ],
+      architecture: `
+        <div class="arch-diagram">
+          <div class="arch-node client">Vanilla JS & CSS3 Client</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i> REST API</div>
+          <div class="arch-node server">Express Serverless Core</div>
+          <div class="arch-arrow"><i class="fa-solid fa-arrows-left-right"></i> Master Data</div>
+          <div class="arch-node ai">119-Item AP Regional Dataset</div>
+        </div>
+      `
+    },
     'tharun-portfolio': {
       title: 'Full-Stack Developer Portfolio',
       category: 'Web & Serverless Development',
