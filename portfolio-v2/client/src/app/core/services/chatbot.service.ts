@@ -17,16 +17,17 @@ export class ChatbotService {
 
   private qaPairs: { [key: string]: string } = {
     hello: "Hi there! I'm Tharun's AI. How can I assist you with his portfolio today?",
-    projects: "Tharun has built five main projects: 1. Full-Stack Developer Portfolio, 2. AI Resume Intelligence System, 3. AgriHelp-AI: Crop Disease & Soil Suitability Portal, 4. Brightness Control Using Hand Gestures, and 5. TerraSight AI: Plant Monitoring System. Ask me about any of these!",
+    projects: "Tharun has developed key software projects including: 1. QtyWise — Smart Purchase Quantity Advisory, 2. Full-Stack Developer Portfolio, 3. AI Resume Intelligence System, 4. AgriHelp-AI: Crop Disease & Soil Portal, 5. Brightness Control Using Hand Gestures, and 6. TerraSight AI: Plant Monitoring System. Ask me about any of these!",
     skills: "Tharun is proficient in Angular 18, TypeScript, Node.js, Express, MongoDB, Python, Flask, MySQL, Git/GitHub, Vercel, and AI-assisted development tools.",
     resume: "You can download Tharun's resume from the actions in the Hero section or the dedicated Resume section. It details his qualifications, B.Tech grades, and course credentials.",
     contact: "You can reach out to Tharun via email at tharunummadala@gmail.com, or check out his social links: GitHub (@uTharun23) and LinkedIn (Tharun Ummadala).",
+    "tell me about qtywise": "QtyWise is a smart, mobile-first purchase quantity advisor designed for AP regional grocery buyers & caterers. It uses portion formulas, market unit conversions (bunches, counts, kg/g), dual-language support (English/Telugu), and offline storage resilience. Live demo at https://qty-wise.vercel.app/",
     "tell me about portfolio": "This portfolio website is a full-stack Angular 18 application backed by a serverless Node.js/Express API. It features real-time visitor analytics, a guestbook with auto-recovery, and this interactive AI chatbot! Hosted on Vercel.",
     "tell me about resume": "The AI Resume Intelligence System is built in Python & Flask. It parses PDF/DOCX resumes, maps skills to job listings, computes percentage match scores, and recommends enhancements. Super practical!",
     "tell me about plant": "TerraSight AI is a computer vision application that processes image streams of crops. It helps detect plant leaves pathogens and stress indices using custom Python image algorithms.",
     "tell me about gesture": "This OpenCV project captures live camera feeds to identify hand gestures. It allows users to control screen brightness without buttons by computing hand landmark coordinate distances.",
     "tell me about agrihelp": "AgriHelp-AI is an ML-powered agricultural portal classifying crop leaf diseases and pathogen strains from uploaded scans, and supplying precise treatment guides and soil guidelines.",
-    default: "I'm a lightweight assistant. Feel free to ask about 'skills', 'projects', 'resume', or 'contact'! I'll do my best to help you."
+    default: "I'm a lightweight assistant. Feel free to ask about 'skills', 'projects', 'qtywise', 'resume', or 'contact'! I'll do my best to help you."
   };
 
   sendMessage(text: string) {
@@ -48,6 +49,7 @@ export class ChatbotService {
 
   private getAIResponse(userMsg: string): string {
     const cleaned = userMsg.toLowerCase().trim();
+    if (cleaned.includes('qtywise') || cleaned.includes('qty') || cleaned.includes('wise') || cleaned.includes('grocery') || cleaned.includes('quantity')) return this.qaPairs['tell me about qtywise'];
     if (cleaned.includes('skill') || cleaned.includes('lang') || cleaned.includes('techno')) return this.qaPairs['skills'];
     if (cleaned.includes('project') || cleaned.includes('work')) return this.qaPairs['projects'];
     if (cleaned.includes('resume') || cleaned.includes('cv') || cleaned.includes('pdf')) return this.qaPairs['resume'];
