@@ -99,7 +99,7 @@ export class Hero implements AfterViewInit, OnDestroy {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            this.animateCount(5);
+            this.animateCount(6);
             observer.unobserve(entry.target);
           }
         });
